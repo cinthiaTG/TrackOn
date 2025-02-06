@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\HomeController;
 
 Route::resource('usuarios', UsuarioController::class);
 
@@ -11,7 +12,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
 
@@ -22,7 +23,7 @@ Route::middleware('auth')->group(function () {
 
 // Ruta para usuarios con rol "usuario"
 Route::middleware('role:usuario')->group(function () {
-    Route::get('/dashboard', [UserController::class, 'index'])->name('users.dashboard');
+    Route::get('user/dashboard', [UserController::class, 'index'])->name('users.dashboard');
 });
 
 // // Ruta para usuarios con rol "transportista"
