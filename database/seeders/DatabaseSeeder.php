@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Cregorias;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -15,12 +16,6 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // User::factory(10)->create();
-        $this->call([
-            //UserSeeder::class,
-            //UserSeeder::class,
-            //UserSeeder::class,
-        ]);
-
         User::factory()->create([
             'name' => 'Cinthia Admin',
             'email' => 'admin@gmail.com',
@@ -38,6 +33,11 @@ class DatabaseSeeder extends Seeder
             'email' => 'juanjo@gmail.com',
             'password' => Hash::make('password'),
             'rol' => 'transportista',
+        ]);
+        $this->call([
+            CategoriasSeeder::class,
+            //UserSeeder::class,
+            //UserSeeder::class,
         ]);
     }
 }

@@ -13,12 +13,13 @@ return new class extends Migration
     {
         Schema::create('pedido', function (Blueprint $table) {
             $table->id();
-            $table->text('descripcion_pedido');
-            $table->enum('tipo', ['fragil', 'no_importa'])->default('no_importa');
-            $table->decimal('precio', 10, 2);
-            $table->string('foto')->nullable(); // Ruta de la imagen del pedido
-            $table->foreignId('usuario_id')->constrained('users')->onDelete('cascade');
-            $table->foreignId('transportista_id')->constrained('transportistas')->onDelete('cascade');   
+            $table->string('descripcion');
+            $table->string('origen_pedido');
+            $table->string('destino_pedido');
+            $table->string('categoria');
+            $table->string('img_pedido')->nullable()->default('/storage/img/almacen.png'); 
+            $table->integer('cantidad_productos');
+            $table->string('precio');
             $table->timestamps();
         });
     }
