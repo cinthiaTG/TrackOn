@@ -14,13 +14,10 @@ return new class extends Migration
         Schema::create('viajes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('transportista_id')->constrained('transportistas')->onDelete('cascade');
-            $table->string('origen', 255);
-            $table->string('destino', 255);
+            $table->string('fecha_inicio', 255);
+            $table->string('fecha_fin', 255);
+            $table->integer('cantidad_pedidos');
             $table->decimal('distancia', 8, 2); // Distancia en kilómetros
-            $table->enum('estado', ['pendiente', 'en curso', 'completado', 'cancelado'])->default('pendiente');
-            $table->timestamp('fecha_solicitud')->useCurrent();
-            $table->timestamp('fecha_inicio')->nullable();
-            $table->timestamp('fecha_fin')->nullable();
             $table->timestamps();
         });
     }

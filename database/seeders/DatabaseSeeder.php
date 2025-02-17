@@ -35,7 +35,7 @@ class DatabaseSeeder extends Seeder
             'rol' => 'transportista',
         ]);
         $this->call([
-            CategoriasSeeder::class,
+            //CategoriasSeeder::class,
             //UserSeeder::class,
             //UserSeeder::class,
         ]);

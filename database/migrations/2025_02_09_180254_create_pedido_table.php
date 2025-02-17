@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('pedido', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('cliente_id');
-            $table->foreign('cliente_id')->references('id')->on('clientes');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->string('estado');
             $table->string('descripcion');
             $table->string('origen_pedido');
             $table->string('destino_pedido');
@@ -25,7 +25,6 @@ return new class extends Migration
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      */
