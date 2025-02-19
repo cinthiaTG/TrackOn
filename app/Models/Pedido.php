@@ -11,7 +11,8 @@ class Pedido extends Model
     use HasFactory, \OwenIt\Auditing\Auditable;
 
     protected $fillable = [
-        'cliente_id',
+        'user_id',
+        'estado', 
         'descripcion', 
         'origen_pedido',
         'destino_pedido',
