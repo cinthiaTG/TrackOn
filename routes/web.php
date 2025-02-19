@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\PedidoController;
 
 Route::resource('usuarios', UsuarioController::class);
 
@@ -14,23 +14,16 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+Route::get('user/crear_pedido', [PedidoController::class, 'create'])->name('user.Cviaje');
+Route::get('user/pedidos', [PedidoController::class, 'index'])->name('user.pedidos');
+
 
 Route::middleware('auth')->group(function () {
 
-// // Ruta para usuarios con rol "admin"
-// Route::middleware('role:admin')->group(function () {
-//     Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
-// });
-
-// Ruta para usuarios con rol "usuario"
 Route::middleware('role:usuario')->group(function () {
-    Route::get('user/dashboard', [UserController::class, 'index'])->name('users.dashboard');
-});
+    Route::get('user/dashboard', [UserController::class, 'create'])->name('users.dashboard');
 
-// // Ruta para usuarios con rol "transportista"
-// Route::middleware('role:transportista')->group(function () {
-//     Route::get('/transportista', [TransportistaController::class, 'index'])->name('transportista.dashboard');
-// });
+});
 
 
 });

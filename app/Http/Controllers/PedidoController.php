@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Models\Pedido;
 
 class PedidoController extends Controller
 {
@@ -11,7 +12,7 @@ class PedidoController extends Controller
      */
     public function index()
     {
-        
+        return (view('users.pedidos'));
     }
 
     /**
@@ -19,7 +20,8 @@ class PedidoController extends Controller
      */
     public function create()
     {
-        //
+        return (view('users.create_pedido'));  
+
     }
 
     /**

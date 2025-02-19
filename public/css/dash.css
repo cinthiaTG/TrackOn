@@ -1,0 +1,59 @@
+/* Contenedor principal */
+.container {
+    margin-top: 40px; /* Espacio superior */
+}
+
+/* Estilo general de las tarjetas */
+.card {
+    border-radius: 16px; /* Bordes redondeados */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    overflow: hidden; /* Evita desbordamientos */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave */
+}
+
+/* Hover en tarjetas */
+.card:hover {
+    transform: translateY(-8px); /* Eleva la tarjeta al pasar el mouse */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Aumenta la sombra */
+}
+
+/* Imágenes en las tarjetas */
+.card-img-top {
+    max-height: 250px; /* Altura máxima de la imagen */
+    object-fit: cover; /* Ajusta la imagen manteniendo las proporciones */
+}
+
+/* Título de la tarjeta */
+.card-title {
+    font-size: 1.5rem; /* Tamaño más grande */
+    font-weight: bold; /* Negrita */
+    color: #2c3e50; /* Azul oscuro */
+}
+
+/* Texto de la tarjeta */
+.card-text {
+    font-size: 1rem; /* Tamaño estándar */
+    color: #555; /* Gris oscuro */
+    line-height: 1.6; /* Mejora la legibilidad */
+}
+
+/* Botón en la tarjeta */
+.btn-primary {
+    background-color: #4a90e2; /* Azul moderno */
+    border: none; /* Sin borde */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado */
+    transition: background 0.3s ease; /* Animación de color */
+}
+
+/* Efecto hover en el botón */
+.btn-primary:hover {
+    background-color: #357ABD; /* Azul más oscuro */
+}
+
+/* Responsive: En pantallas pequeñas, ajusta las tarjetas */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 20px; /* Espacio entre tarjetas */
+    }
+}
