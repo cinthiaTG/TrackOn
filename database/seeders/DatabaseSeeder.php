@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-use App\Models\Cregorias;
+use App\Models\Pedido;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -34,10 +34,20 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('password'),
             'rol' => 'transportista',
         ]);
-        $this->call([
-            //CategoriasSeeder::class,
-            //UserSeeder::class,
-            //UserSeeder::class,
+        Pedido::factory()->create([
+            'user_id' => 1,
+            'estado' => 'En espera',
+            'descripcion' => 'Una descripcion bla bla bla',
+            'origen_pedido' => 'Origen bla bla bla',
+            'destino_pedido' => 'Mudanza',
+            'img_pedido' => '/storage/img/almacen.png',
+            'cantidad_productos' => 4,
         ]);
+
+        // $this->call([
+        //     //CategoriasSeeder::class,
+        //     //UserSeeder::class,
+        //     //UserSeeder::class,
+        // ]);
     }
 }
