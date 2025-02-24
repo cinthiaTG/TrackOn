@@ -34,20 +34,13 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('password'),
             'rol' => 'transportista',
         ]);
-        Pedido::factory()->create([
-            'user_id' => 1,
-            'estado' => 'En espera',
-            'descripcion' => 'Una descripcion bla bla bla',
-            'origen_pedido' => 'Origen bla bla bla',
-            'destino_pedido' => 'Mudanza',
-            'img_pedido' => '/storage/img/almacen.png',
-            'cantidad_productos' => 4,
-        ]);
+        
 
-        // $this->call([
-        //     //CategoriasSeeder::class,
-        //     //UserSeeder::class,
-        //     //UserSeeder::class,
-        // ]);
+        $this->call([
+            PedidoSeeder::class,
+            //CategoriasSeeder::class,
+            //UserSeeder::class,
+            //UserSeeder::class,
+        ]);
     }
 }

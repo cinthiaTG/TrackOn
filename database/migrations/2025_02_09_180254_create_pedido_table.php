@@ -15,16 +15,28 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->string('estado');
-            $table->string('descripcion');
-            $table->string('origen_pedido');
-            $table->string('destino_pedido');
-            $table->string('categoria');
+            $table->string('descripcion_pedido');
             $table->string('img_pedido')->nullable()->default('/storage/img/almacen.png'); 
-            $table->integer('cantidad_productos');
+            $table->string('categoria');
+            
+            // Ubicación de entrega
+            $table->string('pais_entrega');
+            $table->string('ciudad_entrega');
+            $table->string('codigo_postal_entrega');
+            $table->text('direccion_entrega');
+            
+            // Ubicación de envío
+            $table->string('pais_envio');
+            $table->string('ciudad_envio');
+            $table->string('codigo_postal_envio');
+            $table->text('direccion_envio');
             $table->string('precio');
+            
+            $table->boolean('aceptar_terminos');
             $table->timestamps();
         });
     }
+
     /**
      * Reverse the migrations.
      */

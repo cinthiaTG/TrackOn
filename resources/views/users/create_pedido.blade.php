@@ -1,6 +1,6 @@
 @extends('layouts.guest')
 @section('css')
-    <link rel="stylesheet" href="{{asset('css/dash.css')}}">
+    <link rel="stylesheet" href="{{asset('css/c_pedido.css')}}">
 @endsection
 
 @section('content')
@@ -20,11 +20,11 @@
                 <label for="categoria" class="form-label">Categoría</label>
                 <select id="categoria" name="categoria" class="form-select" required>
                     <option value="" selected disabled>Elige...</option>
-                    <option value="fragil">Mudanzas</option>
-                    <option value="fragil">Negocio</option>
-                    <option value="fragil">Paquetes</option>
-                    <option value="fragil">Construccion</option>
-                    <option value="fragil">Particular</option>
+                    <option value="Mudanzas">Mudanzas</option>
+                    <option value="Negocio">Negocio</option>
+                    <option value="Paquetes">Paquetes</option>
+                    <option value="Construccion">Construccion</option>
+                    <option value="Particular">Particular</option>
                     <option value="otro">Otro</option>
                 </select>
             </div>
@@ -63,6 +63,9 @@
 
                 <label for="direccion_origen2" class="form-label">Descripción adicional</label>
                 <textarea type="text" class="form-control" id="direccion_origen2" name="direccion_origen2" placeholder="casa de color avellana al lado de un unicornio" required></textarea>
+                
+                <label for="precio" class="form-label">Crea un precio a tu viaje</label>
+                <input type="text" class="form-control" id="precio" name="precio" required>
             </div>
 
             <div class="col-12">

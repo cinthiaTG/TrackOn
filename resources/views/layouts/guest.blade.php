@@ -37,7 +37,7 @@
                         <a class="nav-link active" aria-current="page" href="{{route('dashboard')}}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Tus pedidos</a>
+                        <a class="nav-link active" aria-current="page" href="{{route('all.pedidos')}}">Tus pedidos</a>
                     </li>
                 </ul>
             </div>

@@ -3,16 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Pedido;
 
-class PedidoController extends Controller
+class VehiculosController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return ;
+        return (view('rentas.vehiculos'));
     }
 
     /**
@@ -20,12 +19,7 @@ class PedidoController extends Controller
      */
     public function create()
     {
-        return (view('users.create_pedido'));  
-
-    }
-    public function allPedidos(){
-        $pedido = Pedido::all();
-        return(view('users.pedidos', compact('pedido')));
+        //
     }
 
     /**
@@ -33,7 +27,7 @@ class PedidoController extends Controller
      */
     public function store(Request $request)
     {
-
+        //
     }
 
     /**
@@ -41,8 +35,7 @@ class PedidoController extends Controller
      */
     public function show(string $id)
     {
-
-
+        //
     }
 
     /**

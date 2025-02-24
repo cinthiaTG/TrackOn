@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('apartado_inicial')
+<title>TrackOn</title>
+    
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

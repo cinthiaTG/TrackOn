@@ -20,11 +20,11 @@
 
         <div class="col-md-6 mb-4">
             <div class="card h-90">
-                <img src="{{ asset('storage/img/compras.jpeg') }}" class="card-img-top img-fluid" alt="Crear un pedido">
+                <img src="{{ asset('storage/img/RentaVehiculo.jpeg') }}" class="card-img-top img-fluid" alt="Crear un pedido">
                 <div class="card-body">
-                    <h5 class="card-title">Crear un pedido</h5>
-                    <p class="card-text">Ocupas que uno de nuestros transportistas te haga llegar tu pedido hacia donde estas?</p>
-                    <a  href="{{route('user.pedidos')}}" class="btn btn-primary">Ir a pedidos</a>
+                    <h5 class="card-title">Rentar un vehiculo</h5>
+                    <p class="card-text">Te ayudamos a que tengas acceso a vehiculos para tus viajes sorpresa</p>
+                    <a  href="{{route('user.rentaV')}}" class="btn btn-primary">Ir a pedidos</a>
                 </div>
             </div>
         </div>
