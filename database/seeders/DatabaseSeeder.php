@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             PedidoSeeder::class,
-            //CategoriasSeeder::class,
+            VehiculoSeeder::class,
             //UserSeeder::class,
             //UserSeeder::class,
         ]);

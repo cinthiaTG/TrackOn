@@ -6,11 +6,11 @@
     <table class="table table-striped">
         <thead>
             <tr>
+                <th>Imagen</th>
                 <th>ID</th>
                 <th>Estado</th>
                 <th>Descripción</th>
                 <th>Categoría</th>
-                <th>Imagen</th>
                 <th>País de Entrega</th>
                 <th>Ciudad de Entrega</th>
                 <th>Código Postal de Entrega</th>
@@ -24,17 +24,19 @@
         <tbody>
             @foreach($pedido as $pedido)
                 <tr>
+                    <div class="imagen">
+                        <td>
+                            @if($pedido->img_pedido)
+                                <img src="{{ asset($pedido->img_pedido) }}" alt="Imagen del pedido" width="110" height="110">
+                            @else
+                                Sin imagen
+                            @endif
+                        </td>
+                    </div>
                     <td>{{ $pedido->id }}</td>
                     <td>{{ $pedido->estado }}</td>
                     <td>{{ $pedido->descripcion_pedido }}</td>
                     <td>{{ $pedido->categoria }}</td>
-                    <td>
-                        @if($pedido->img_pedido)
-                            <img src="{{ asset($pedido->img_pedido) }}" alt="Imagen del pedido" width="50">
-                        @else
-                            Sin imagen
-                        @endif
-                    </td>
                     <td>{{ $pedido->pais_entrega }}</td>
                     <td>{{ $pedido->ciudad_entrega }}</td>
                     <td>{{ $pedido->codigo_postal_entrega }}</td>
