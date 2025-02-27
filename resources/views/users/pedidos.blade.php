@@ -7,7 +7,7 @@
         <thead>
             <tr>
                 <th>Imagen</th>
-                <th>ID</th>
+                {{-- <th>ID</th> --}}
                 <th>Estado</th>
                 <th>Descripción</th>
                 <th>Categoría</th>
@@ -33,7 +33,7 @@
                             @endif
                         </td>
                     </div>
-                    <td>{{ $pedido->id }}</td>
+                    {{-- <td>{{ $pedido->id }}</td> --}}
                     <td>{{ $pedido->estado }}</td>
                     <td>{{ $pedido->descripcion_pedido }}</td>
                     <td>{{ $pedido->categoria }}</td>

@@ -20,7 +20,7 @@ class VehiculoSeeder extends Seeder
             'transmision' => 'Manual',
             'precio_por_dia' => '1234.67',
             'disponibilidad' => true,
-            'img_vehiculo' => '/storage/img/nissanKicks.jpeg',
+            'img_vehiculo' => '/storage/img/vehiculos/nissanKicks.jpeg',
         ]);
 
         DB::table('vehiculo')->insert([
@@ -31,7 +31,7 @@ class VehiculoSeeder extends Seeder
             'transmision' => 'Manual',
             'precio_por_dia' => '1234.67',
             'disponibilidad' => true,
-            'img_vehiculo' => '/storage/img/nissansentra.jpeg',
+            'img_vehiculo' => '/storage/img/vehiculos/nissansentra.jpeg',
         ]);
         DB::table('vehiculo')->insert([
             'marca' =>'honda',
@@ -41,7 +41,7 @@ class VehiculoSeeder extends Seeder
             'transmision' => 'Manual',
             'precio_por_dia' => '1234.67',
             'disponibilidad' => true,
-            'img_vehiculo' => '/storage/img/hondacity.jpeg',
+            'img_vehiculo' => '/storage/img/vehiculos/hondacity.jpeg',
         ]);
         
         

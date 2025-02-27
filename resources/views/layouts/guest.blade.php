@@ -23,7 +23,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <!-- Logo a la izquierda -->
-            <a class="navbar-brand" href="{{route('dashboard')}}">TrackOn</a>
+            <a class="navbar-brand" href="{{route('users.dashboard')}}">TrackOn</a>
 
             <!-- Botón de menú para pantallas pequeñas -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +34,7 @@
                 <!-- Enlaces centrados -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{route('dashboard')}}">Home</a>
+                        <a class="nav-link active" aria-current="page" href="{{route('users.dashboard')}}">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{{route('all.pedidos')}}">Tus pedidos</a>

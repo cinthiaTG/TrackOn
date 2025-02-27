@@ -15,8 +15,8 @@ class PedidoSeeder extends Seeder
         DB::table('pedido')->insert([
             'user_id' => 1,
             'estado' => 'inactivo',
-            'descripcion_pedido' => 'Casa de color avellana al lado de un unicornio',
-            'img_pedido' => '/storage/img/almacen.png',
+            'descripcion_pedido' => 'funkoss',
+            'img_pedido' => '/storage/img/pedidos/theOffice.jpg',
             'categoria' => 'Mudanza',
             'pais_entrega' => 'México',
             'ciudad_entrega' => 'Ciudad Victoria',
@@ -33,9 +33,9 @@ class PedidoSeeder extends Seeder
         DB::table('pedido')->insert([
             'user_id' => 2,
             'estado' => 'terminado',
-            'descripcion_pedido' => 'Un paquete con herramientas de construcción',
-            'img_pedido' => '/storage/img/almacen.png',
-            'categoria' => 'Construcción',
+            'descripcion_pedido' => 'tacones',
+            'img_pedido' => '/storage/img/pedidos/taconesCz.jpeg',
+            'categoria' => 'Particular',
             'pais_entrega' => 'México',
             'ciudad_entrega' => 'Guadalajara',
             'codigo_postal_entrega' => '44100',
