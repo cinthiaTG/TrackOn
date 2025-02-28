@@ -2,66 +2,55 @@
 
 @section('content')
 <div class="container">
-    <h1>Empieza a crear tu viaje</h1>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Imagen</th>
-                <th>Descripción</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($pedido as $pedido)
-                <tr>
-                    <td>
-                        @if($pedido->img_pedido)
-                            <img src="{{ asset($pedido->img_pedido) }}" alt="Imagen del pedido" width="150" height="150">
-                        @else
-                            Sin imagen
-                        @endif
-                    </td>
-                    <td>
-                        <dl class="row">
-                            <dt class="col-sm-3">Descripción</dt>
-                            <dd class="col-sm-9">{{ $pedido->descripcion_pedido }}</dd>
+    <div class="col-12 mt-4">
+        <div class="mb-5 ps-3">
+            <h3 class="mb-1">Viaje 12</h3>
+        </div>
 
-                            {{-- <dt class="col-sm-3">Estado</dt>
-                            <dd class="col-sm-9">{{ $pedido->estado }}</dd> --}}
+        <div class="row">
+            <div class="card-body px-0 pb-2">
+                <div class="table-responsive">
+                    <table class="table align-items-center mb-0">
+                        <thead>
+                            <tr>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Pedido</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Ruta</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Estado pedido</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for ($i = 1; $i <= 5; $i++)
+                            <tr>
+                                <td>
+                                    <div class="d-flex px-2 py-1">
+                                        <div>
+                                            <img src="{{ asset('/storage/img/pedidos/theOffice.jpg') }}" class="avatar avatar-sm me-3" alt="Pedido" width="50" height="50">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <h6 class="mb-0 text-sm">pedido{{ $i }}ID</h6>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vol.</p>
+                                    <button type="button" class="btn btn-success">Ver ruta</button>
+                                </td>
+                                <td class="align-middle text-center text-sm">
+                                    <span class="text-xs font-weight-bold">{{ $i % 2 == 0 ? 'Pagado' : 'Terminado' }}</span>
+                                </td>
+                                <td class="align-middle">
 
-                            <dt class="col-sm-3">Categoría</dt>
-                            <dd class="col-sm-9">{{ $pedido->categoria }}</dd>
-{{-- 
-                            <dt class="col-sm-3">País Entrega</dt>
-                            <dd class="col-sm-9">{{ $pedido->pais_entrega }}</dd> --}}
-
-                            <dt class="col-sm-3">Ciudad Entrega</dt>
-                            <dd class="col-sm-9">{{ $pedido->ciudad_entrega }}</dd>
-
-                            {{-- <dt class="col-sm-3">Código Postal Entrega</dt>
-                            <dd class="col-sm-9">{{ $pedido->codigo_postal_entrega }}</dd>
-
-                            <dt class="col-sm-3">País Envío</dt>
-                            <dd class="col-sm-9">{{ $pedido->pais_envio }}</dd> --}}
-
-                            <dt class="col-sm-3">Ciudad Envío</dt>
-                            <dd class="col-sm-9">{{ $pedido->ciudad_envio }}</dd>
-{{-- 
-                            <dt class="col-sm-3">Código Postal Envío</dt>
-                            <dd class="col-sm-9">{{ $pedido->codigo_postal_envio }}</dd> --}}
-
-                            <dt class="col-sm-3">Precio</dt>
-                            <dd class="col-sm-9">${{ number_format($pedido->precio, 2) }}</dd>
-                        </dl>
-                    </td>
-                    <td>
-                        <a href="#" class="btn btn-info btn-sm">Tomar</a><br><br>
-                        <a href="https://www.google.com.mx/maps/@19.083952,-98.2094707,3a,75y,317.52h,102.62t/data=!3m7!1e1!3m5!1sHhwNXDwidiqyvCyxXl7Wtg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.624579989235514%26panoid%3DHhwNXDwidiqyvCyxXl7Wtg%26yaw%3D317.5170227572902!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDIyNS4wIKXMDSoASAFQAw%3D%3D" class="btn btn-info btn-sm">Ver ruta</a><br><br>
-                        <a href="#" class="btn btn-info btn-sm">Detalles</a>
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
+                                </td>
+                            </tr>
+                            @endfor
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection

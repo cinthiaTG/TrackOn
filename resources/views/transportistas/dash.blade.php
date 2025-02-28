@@ -47,7 +47,7 @@
                 <div class="d-flex justify-content-between">
                   <div>
                     <p class="text-sm mb-0 text-capitalize">Estado</p>
-                    <h4 class="mb-0">En viaje</h4>
+                    <h4 class="mb-0">En ruta</h4>
                   </div>
                 </div>
               </div>
