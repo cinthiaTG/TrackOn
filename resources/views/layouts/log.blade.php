@@ -22,7 +22,6 @@
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <!-- Logo a la izquierda -->
             <a class="navbar-brand" href="{{route('transportistas.dashboard')}}">TrackOn</a>
 
             <!-- Botón de menú para pantallas pequeñas -->
@@ -37,10 +36,10 @@
                         <a class="nav-link active" aria-current="page" href="{{route('transportistas.dashboard')}}">Dash</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Envios</a>
+                        <a class="nav-link active" aria-current="page" href="{{route('transportistas.viajes')}}">Tus Viajes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Envios</a>
+                        <a class="nav-link active" aria-current="page" href="{{route('transportistas.nosotros')}}">Nosotros</a>
                     </li>
                 </ul>
             </div>

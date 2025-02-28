@@ -78,7 +78,7 @@
             </div>
 
             <div class="col-12">
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="submit" class="btn btn-warning">Enviar</button>
             </div>
 
         </form>

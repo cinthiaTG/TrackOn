@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pedido;
+
 
 class TransportistaController extends Controller
 {
@@ -11,7 +13,8 @@ class TransportistaController extends Controller
      */
     public function index()
     {
-        return(view('transportistas.dash'));
+        $pedido = Pedido::all();
+        return(view('transportistas.dash', compact('pedido')));
     }
 
     /**
@@ -21,7 +24,14 @@ class TransportistaController extends Controller
     {
         //
     }
-
+    public function viajes()
+    {
+        return(view('transportistas.viajes'));
+    }
+    public function nosotros()
+    {
+        return(view('transportistas.nosotros'));
+    }
     /**
      * Store a newly created resource in storage.
      */

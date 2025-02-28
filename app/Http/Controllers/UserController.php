@@ -21,6 +21,10 @@ class UserController extends Controller
     {
         //
     }
+    public function nosotros(){
+        return(view('nosotros'));
+
+    }
 
     /**
      * Store a newly created resource in storage.

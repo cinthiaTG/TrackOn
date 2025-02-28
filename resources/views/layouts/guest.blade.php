@@ -39,6 +39,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{{route('all.pedidos')}}">Tus pedidos</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{route('user.nosotros')}}">Nosotros</a>
+                    </li>
                 </ul>
             </div>
 

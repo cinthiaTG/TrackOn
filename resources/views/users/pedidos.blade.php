@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h1>Lista de Pedidos</h1>
+    <h1>Tus Pedidos</h1>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -45,7 +45,8 @@
                     <td>{{ $pedido->codigo_postal_envio }}</td>
                     <td>${{ number_format($pedido->precio, 2) }}</td>
                     <td>
-                        <a href="#" class="btn btn-info btn-sm">Ver</a>
+                        <a href="#" class="btn btn-warning">Detalles</a><br><br>
+                        <a href="#" class="btn btn-warning">Ver ruta</a>
                     </td>
                 </tr>
             @endforeach
