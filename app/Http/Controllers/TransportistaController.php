@@ -14,8 +14,10 @@ class TransportistaController extends Controller
      */
     public function index()
     {
-        $transportista = Transportista::all();
-        return(view('transportistas.dash', compact('transportista')));
+
+        $transportista = Transportista::findOrFail($id);
+        return view('transportistas.dash', compact('transportista'));
+
     }
 
     /**
@@ -23,7 +25,6 @@ class TransportistaController extends Controller
      */
     public function create()
     {
-        //
     }
 
     public function viajes()
