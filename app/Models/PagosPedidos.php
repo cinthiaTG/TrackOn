@@ -16,13 +16,13 @@ class PagosPedidos extends Model
         'pedido_id',
         'accion',
         'fecha_pago',
-        'monto',
         'comision',
         'metodo',
         'descripcion',
     ];
     protected $attributes = [
         'estado' => 'Pendiente',
+        'monto' =>15.0,
     ];
     
 }

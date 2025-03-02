@@ -171,15 +171,11 @@ class PedidoController extends Controller
      */
     public function destroy($id)
     {
-        // Find the Pedido to delete
         $pedido = Pedido::findOrFail($id);
 
-        // Delete associated image if exists
         if ($pedido->img_pedido && Storage::exists($pedido->img_pedido)) {
             Storage::delete($pedido->img_pedido);
         }
-
-        // Delete the Pedido
         $pedido->delete();
 
         return redirect()->route('all.pedidos')->with('success', 'Pedido eliminado con éxito.');
