@@ -7,6 +7,7 @@ use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VehiculosController;
 use App\Http\Controllers\TransportistaController;
+use App\Http\Controllers\AdminController;
 
 
 // Ruta principal
@@ -30,6 +31,8 @@ Route::get('/dashboard', function () {
             return redirect()->route('users.dashboard');
         case 'transportista':
             return redirect()->route('transportistas.dashboard');
+        case 'admin':
+            return redirect()->route('admin.dashboard');
         default:
             return redirect('/')->with('error', 'Rol no válido.');
     }
@@ -42,9 +45,15 @@ Route::middleware(['auth'])->group(function () {
     // Grupo de rutas para usuarios con rol "usuario"
     Route::middleware(['role:usuario'])->prefix('user')->group(function () {
         Route::get('/dashboard', [UserController::class, 'index'])->name('users.dashboard');    
-        Route::get('/crear_pedido', [PedidoController::class, 'create'])->name('user.Cviaje');
-        Route::get('/rentaVehiculos', [VehiculosController::class, 'index'])->name('user.rentaV');
+        Route::get('/crear_pedido', [PedidoController::class, 'create'])->name('user.Cviaje'); // Ruta para mostrar el formulario
+        Route::post('/crear_pedido', [PedidoController::class, 'store']); 
+               Route::get('/rentaVehiculos', [VehiculosController::class, 'index'])->name('user.rentaV');
         Route::get('/misPedidos', [PedidoController::class, 'allPedidos'])->name('all.pedidos');
+        Route::get('/pedido/{id}/edit', [PedidoController::class, 'edit'])->name('pedidos.edit');
+        Route::put('/pedidos/{pedido}', [PedidoController::class, 'update'])->name('pedidos.update');
+        Route::delete('/pedidos/{id}', [PedidoController::class, 'destroy'])->name('pedido.destroy');
+        Route::get('/detalles/pedido/{id}', [PedidoController::class, 'show'])->name('pedido.show');
+
         Route::get('/nosotros', [UserController::class, 'nosotros'])->name('user.nosotros');
 
     });
@@ -53,6 +62,13 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/viajes', [TransportistaController::class, 'viajes'])->name('transportistas.viajes');
         Route::get('/nosotros', [TransportistaController::class, 'nosotros'])->name('transportistas.nosotros');
         Route::get('/pedidos', [TransportistaController::class, 'pedidos'])->name('transportistas.pedidos');
+
+    });
+    Route::middleware(['role:admin'])->prefix('admin')->group(function () {
+        Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+        // Route::get('/viajes', [TransportistaController::class, 'viajes'])->name('transportistas.viajes');
+        // Route::get('/nosotros', [TransportistaController::class, 'nosotros'])->name('transportistas.nosotros');
+        // Route::get('/pedidos', [TransportistaController::class, 'pedidos'])->name('transportistas.pedidos');
 
     });
 

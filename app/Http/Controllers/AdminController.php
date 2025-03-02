@@ -3,22 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Pedido;
-use App\Models\Transportista;
 
-
-class TransportistaController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-
-        //$transportista = Transportista::findOrFail($id);
-        //return view('transportistas.dash', compact('transportista'));
-        return view('transportistas.dash');
-
+        return(view('admin.dashboard'));
     }
 
     /**
@@ -26,19 +19,12 @@ class TransportistaController extends Controller
      */
     public function create()
     {
+        //
+    }
+    public function nosotros(){
+
     }
 
-    public function viajes()
-    {
-        return(view('transportistas.viajes'));
-    }
-    public function pedidos(){
-        return (view('transportistas.pedidos'));
-    }
-    public function nosotros()
-    {
-        return(view('transportistas.nosotros'));
-    }
     /**
      * Store a newly created resource in storage.
      */

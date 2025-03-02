@@ -4,23 +4,21 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use OwenIt\Auditing\Contracts\Auditable;
-use OwenIt\Auditing\Auditable as AuditableTrait;
 
-class Pedido extends Model implements Auditable
+class Pedido extends Model
 {
-    use HasFactory, AuditableTrait; // Asegúrate de usar el trait correcto
+    use HasFactory; // Asegúrate de usar el trait correcto
 
     protected $table = 'pedido'; // Especificar el nombre correcto de la tabla
 
     protected $fillable = [
         'user_id',
-        'estado', 
-        'descripcion_pedido', 
-        'img_pedido', 
-        'categoria', 
-        'pais_entrega', 
-        'ciudad_entrega', 
+        'descripcion_pedido',
+        'cantidad',
+        'img_pedido',
+        'categoria',
+        'pais_entrega',
+        'ciudad_entrega',
         'codigo_postal_entrega',
         'direccion_entrega',
         'pais_envio',
@@ -30,4 +28,8 @@ class Pedido extends Model implements Auditable
         'aceptar_terminos',
         'precio',
     ];
+    protected $attributes = [
+        'estado' => 'Pendiente',
+    ];
+    
 }

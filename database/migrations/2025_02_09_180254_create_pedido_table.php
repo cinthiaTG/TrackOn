@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('pedido', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->string('estado');
+            $table->string('estado')->default('pendiente');
             $table->string('descripcion_pedido');
+            $table->integer('cantidad');
             $table->string('img_pedido')->nullable()->default('/storage/img/almacen.png'); 
             $table->string('categoria');
             
@@ -30,7 +31,7 @@ return new class extends Migration
             $table->string('ciudad_envio');
             $table->string('codigo_postal_envio');
             $table->text('direccion_envio');
-            $table->string('precio');
+            $table->decimal('precio', 10, 2);
             
             $table->boolean('aceptar_terminos');
             $table->timestamps();

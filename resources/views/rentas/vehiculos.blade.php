@@ -14,9 +14,9 @@
                 <th>Marca</th>
                 <th>Modelo</th>
                 <th>Año</th>
-                <th>Placa</th>
+                {{-- <th>Placa</th> --}}
                 <th>Transmisión</th>
-                <th>Precio (MX)</th>
+                <th>Precio (MX) <br> P/dia</th>
                 <th>Disponibilidad</th>
                 <th>Acciones</th>
             </tr>
@@ -34,7 +34,7 @@
                     <td>{{ $vehiculo->marca }}</td>
                     <td>{{ $vehiculo->modelo }}</td>
                     <td>{{ $vehiculo->año }}</td>
-                    <td>{{ $vehiculo->placa }}</td>
+                    {{-- <td>{{ $vehiculo->placa }}</td> --}}
                     <td>{{ $vehiculo->transmision }}</td>
                     <td>{{ $vehiculo->precio_por_dia }}</td>
                     <td>{{ $vehiculo->disponibilidad ? 'Disponible' : 'No disponible' }}</td>
