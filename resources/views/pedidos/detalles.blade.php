@@ -3,7 +3,6 @@
 @section('css')
     <link rel="stylesheet" href="{{asset('css/ticket.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 @endsection
 
 @section('content')
@@ -28,7 +27,7 @@
         </div>
 
         <div class="ticket-item">
-            <label>Precio:</label>
+            <label>Precio (MXN):</label>
             <span>${{ number_format($pedido->precio, 2) }}</span>
         </div>
 
@@ -60,6 +59,48 @@
             <label>Dirección de Envío:</label>
             <span>{{ $pedido->direccion_envio }}</span>
         </div>
+
+        <!-- Detalles del Pago -->
+        <div class="ticket-header">
+            Detalles del Pago
+        </div>
+
+        @foreach ($pagos as $pago)
+            <div class="ticket-item">
+                <label>Acción:</label>
+                <span>{{ $pago->accion }}</span>
+            </div>
+            
+            <div class="ticket-item">
+                <label>Fecha de Pago:</label>
+                <span>{{ \Carbon\Carbon::parse($pago->fecha_pago)->format('Y-m-d') }}</span>
+            </div>
+
+            <div class="ticket-item">
+                <label>Monto (MXN):</label>
+                <span>${{ number_format($pago->monto, 2) }}</span>
+            </div>
+
+            <div class="ticket-item">
+                <label>Comisión (MXN):</label>
+                <span>${{ number_format($pago->comision, 2) }}</span>
+            </div>
+
+            <div class="ticket-item">
+                <label>Método de Pago:</label>
+                <span>{{ $pago->metodo }}</span>
+            </div>
+
+            <div class="ticket-item">
+                <label>Descripción:</label>
+                <span>{{ $pago->descripcion }}</span>
+            </div>
+
+            <div class="ticket-item">
+                <label>Estado del Pago:</label>
+                <span>{{ $pago->estado }}</span>
+            </div>
+        @endforeach
 
         <div class="ticket-footer">
             <a href="{{ route('all.pedidos')}}" class="btn">

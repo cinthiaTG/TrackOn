@@ -2,6 +2,7 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/c_pedido.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 @endsection
 
 @section('content')
@@ -133,7 +134,12 @@
             </div>
 
             <div class="col-12">
-                <button type="submit" class="btn btn-warning">Actualizar Pedido</button>
+                <button type="submit" class="btn btn-warning">Actualizar Pedido</button><br><br>
+            </div>
+            <div class="col-12">
+                <a href="{{ route('all.pedidos')}}" class="btn btn-warning">
+                    <i class="fas fa-arrow-left"></i> Regresar
+                </a>
             </div>
         </form>
     </div>

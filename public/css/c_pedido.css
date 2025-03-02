@@ -65,3 +65,22 @@ textarea.form-control {
         width: 100%;
     }
 }
+.ticket-footer {
+    margin-top: 20px;
+    font-size: 0.9em;
+    text-align: center;
+    color: #555;
+}
+
+.ticket-footer .btn {
+    background-color: #FFD700;
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.ticket-footer .btn:hover {
+    background-color: #FFCC00;
+}

@@ -67,5 +67,23 @@ class PedidoSeeder extends Seeder
             'precio' => '600',
             'aceptar_terminos' => true,
         ]);
+        DB::table('pedido')->insert([
+            'user_id' => 2,
+            'estado' => 'Pendiente',
+            'descripcion_pedido' => 'Funkos de the office',
+            'cantidad' => 200,
+            'img_pedido' => '/img/pedidos/theOffice.jpg',
+            'categoria' => 'Otro',
+            'pais_entrega' => 'México',
+            'ciudad_entrega' => 'Guadalajara',
+            'codigo_postal_entrega' => '44100',
+            'direccion_entrega' => 'Colonia Americana, calle 20',
+            'pais_envio' => 'México',
+            'ciudad_envio' => 'León',
+            'codigo_postal_envio' => '170',
+            'direccion_envio' => 'Colonia Centro, calle 15',
+            'precio' => '600',
+            'aceptar_terminos' => true,
+        ]);
     }
 }
