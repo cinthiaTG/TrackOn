@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\VehiculosController;
 use App\Http\Controllers\TransportistaController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PagosController;
 
 
 // Ruta principal
@@ -44,8 +45,9 @@ Route::middleware(['auth'])->group(function () {
 
     // Grupo de rutas para usuarios con rol "usuario"
     Route::middleware(['role:usuario'])->prefix('user')->group(function () {
+
         Route::get('/dashboard', [UserController::class, 'index'])->name('users.dashboard');    
-        Route::get('/crear_pedido', [PedidoController::class, 'create'])->name('user.Cviaje'); // Ruta para mostrar el formulario
+        Route::get('/crear_pedido', [PedidoController::class, 'create'])->name('user.Cviaje');
         Route::post('/crear_pedido', [PedidoController::class, 'store']); 
                Route::get('/rentaVehiculos', [VehiculosController::class, 'index'])->name('user.rentaV');
         Route::get('/misPedidos', [PedidoController::class, 'allPedidos'])->name('all.pedidos');
@@ -54,10 +56,14 @@ Route::middleware(['auth'])->group(function () {
         Route::delete('/pedidos/{id}', [PedidoController::class, 'destroy'])->name('pedido.destroy');
         Route::get('/detalles/pedido/{id}', [PedidoController::class, 'show'])->name('pedido.show');
 
+        Route::get('/pago/{id}', [PagosController::class, 'facturaPedido'])->name('pago.pedido');
+        Route::post('/pago/{id}', [PagosController::class, 'store'])->name('pago.pedido');
+
         Route::get('/nosotros', [UserController::class, 'nosotros'])->name('user.nosotros');
 
     });
     Route::middleware(['role:transportista'])->prefix('transportista')->group(function () {
+
         Route::get('/dashboard', [TransportistaController::class, 'index'])->name('transportistas.dashboard');
         Route::get('/viajes', [TransportistaController::class, 'viajes'])->name('transportistas.viajes');
         Route::get('/nosotros', [TransportistaController::class, 'nosotros'])->name('transportistas.nosotros');

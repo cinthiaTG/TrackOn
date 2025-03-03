@@ -68,7 +68,7 @@
                             @endif
 
                             @if ($pedido->estado=='Aceptado')
-                            <a href="#" class="btn btn-outline-primary">$ Pagar</a><br>
+                            <a href="{{ route('pago.pedido', ['id' => $pedido->id]) }}" class="btn btn-outline-primary">$ Pagar</a>
                             @endif
                             
                         </td>

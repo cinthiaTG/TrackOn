@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
+
 class PagosPedidos extends Model
 {
     use HasFactory; // Asegúrate de usar el trait correcto
@@ -19,10 +20,11 @@ class PagosPedidos extends Model
         'comision',
         'metodo',
         'descripcion',
+        'monto',
+        'estado',
     ];
     protected $attributes = [
-        'estado' => 'Pendiente',
-        'monto' =>15.0,
+        
     ];
     
 }
