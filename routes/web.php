@@ -56,8 +56,11 @@ Route::middleware(['auth'])->group(function () {
         Route::delete('/pedidos/{id}', [PedidoController::class, 'destroy'])->name('pedido.destroy');
         Route::get('/detalles/pedido/{id}', [PedidoController::class, 'show'])->name('pedido.show');
 
-        Route::get('/pago/{id}', [PagosController::class, 'facturaPedido'])->name('pago.pedido');
-        Route::post('/pago/{id}', [PagosController::class, 'store'])->name('pago.pedido');
+        Route::get('/pago/pedido/{id}', [PagosController::class, 'facturaPedido'])->name('pago.pedido');
+        Route::post('/pago/pedido/{id}', [PagosController::class, 'store'])->name('pago.pedido');
+
+        Route::get('/pago/renta/{id}', [VehiculosController::class, 'facturaRenta'])->name('pago.renta');
+        Route::post('/pago/renta/{id}', [VehiculosController::class, 'rentaStore'])->name('pago.renta');
 
         Route::get('/nosotros', [UserController::class, 'nosotros'])->name('user.nosotros');
 

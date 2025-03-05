@@ -6,7 +6,7 @@
     @if($pedido->isEmpty())
         <h2>No tienes pedidos aún</h2>
     @else
-    <h1>Tus Pedidos</h1>
+    <h2>Tus Pedidos</h2>
 
         <table class="table table-striped">
             <thead>
@@ -74,6 +74,61 @@
                         </td>
                     </tr>
                 @endforeach
+            </tbody>
+        </table>
+
+        <br><h2>Tus Rentas</h2>
+
+
+
+
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Año</th>
+                    <th>Placa</th>
+                    <th>Transmisión</th>
+                    <th>Precio (MX) <br> P/dia</th>
+                    <th>Dias de renta</th>
+                    <th>Total</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($vehiculo->where('disponibilidad', false) as $v)
+                @php
+                    $renta = $rentas->where('vehiculo_id', $v->id)->first(); // Obtiene la primera renta asociada
+                @endphp
+            
+                @if($renta)
+                    <tr>
+                        <td>
+                            @if($v->img_vehiculo)
+                                <img src="{{ asset($v->img_vehiculo) }}" alt="Imagen del vehículo" width="280" height="150">
+                            @else
+                                Sin imagen
+                            @endif
+                        </td>
+                        <td>{{ $v->marca }}</td>
+                        <td>{{ $v->modelo }}</td>
+                        <td>{{ $v->año }}</td>
+                        <td>{{ $v->placa }}</td>
+                        <td>{{ $v->transmision }}</td>
+                        <td>{{ $v->precio_por_dia }}</td>
+                        <td>{{ $renta->dias }}</td>
+                        <td>{{ $renta->dias * $v->precio_por_dia }}</td>
+                        <td>
+                            <a href="#" class="btn btn-secondary">Detalles</a>
+                        </td>
+                    </tr>
+                @endif
+            @endforeach
+            
+            
             </tbody>
         </table>
     @endif

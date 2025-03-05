@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\PagosPedidos;
 use App\Models\Pedido;
+use App\Models\Vehiculo;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,10 +20,6 @@ class PagosController extends Controller
         $pedido = Pedido::findOrFail($id);
         return view('pedidos.pagos', compact('pedido'));
     }
-
-    /**
-     * Guardar un nuevo pago.
-     */
     public function store(Request $request, $id)
     {
         $request->validate([

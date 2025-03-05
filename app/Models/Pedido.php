@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Pedido extends Model
 {
-    use HasFactory; // Asegúrate de usar el trait correcto
+    use HasFactory;
 
-    protected $table = 'pedido'; // Especificar el nombre correcto de la tabla
+    protected $table = 'pedido';
 
     protected $fillable = [
         'user_id',

@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pedido;
+use App\Models\Vehiculo;
 use App\Models\PagosPedidos;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+use App\Models\PagoVehiculos;
+
 
 class PedidoController extends Controller
 {
@@ -34,7 +37,10 @@ class PedidoController extends Controller
     public function allPedidos()
     {
         $pedido = Pedido::where('user_id', Auth::id())->get();
-        return view('users.pedidos', compact('pedido'));
+        $rentas = PagoVehiculos::where('user_id', Auth::id())->get();
+        $vehiculo = Vehiculo::all();
+
+        return view('users.pedidos', compact('pedido','rentas', 'vehiculo'));
     }
 
     /**
@@ -50,11 +56,11 @@ class PedidoController extends Controller
             'categoria' => 'required|string',
             'pais_entrega' => 'required|string',
             'ciudad_entrega' => 'required|string',
-            'codigo_postal_entrega' => 'required|string',
+            'codigo_postal_entrega' => 'required|integer|digits:5',
             'direccion_entrega' => 'required|string',
             'pais_envio' => 'required|string',
             'ciudad_envio' => 'required|string',
-            'codigo_postal_envio' => 'required|string',
+            'codigo_postal_envio' => 'required|integer|digits:5',
             'direccion_envio' => 'required|string',
             'precio' => 'required|numeric',
             'aceptar_terminos' => 'accepted',
@@ -125,11 +131,11 @@ class PedidoController extends Controller
         'categoria' => 'required|string',
         'pais_entrega' => 'required|string',
         'ciudad_entrega' => 'required|string',
-        'codigo_postal_entrega' => 'required|string',
+        'codigo_postal_entrega' => 'required|integer|digits:5',
         'direccion_entrega' => 'required|string',
         'pais_envio' => 'required|string',
         'ciudad_envio' => 'required|string',
-        'codigo_postal_envio' => 'required|string',
+        'codigo_postal_envio' => 'required|integer|digits:5',
         'direccion_envio' => 'required|string',
         'precio' => 'required|numeric',
         'aceptar_terminos' => 'accepted', // verifica que el checkbox este marcado

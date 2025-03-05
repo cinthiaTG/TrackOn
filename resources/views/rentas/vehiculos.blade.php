@@ -39,7 +39,7 @@
                     <td>{{ $vehiculo->precio_por_dia }}</td>
                     <td>{{ $vehiculo->disponibilidad ? 'Disponible' : 'No disponible' }}</td>
                     <td>
-                        <a href="#" class="btn btn-warning">Rentar</a>
+                        <a href="{{route('pago.renta', ['id' => $vehiculo->id])}}" class="btn btn-warning">Rentar</a>
                     </td>
                 </tr>
             @endforeach

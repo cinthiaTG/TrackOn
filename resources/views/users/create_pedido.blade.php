@@ -65,7 +65,7 @@
                 @enderror
 
                 <label for="codigo_postal_entrega" class="form-label">Código Postal</label>
-                <input type="text" class="form-control" id="codigo_postal_entrega" name="codigo_postal_entrega" required value="{{ old('codigo_postal_entrega') }}">
+                <input type="number" class="form-control" id="codigo_postal_entrega" name="codigo_postal_entrega" required value="{{ old('codigo_postal_entrega') }}">
                 @error('codigo_postal_entrega')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
@@ -95,7 +95,7 @@
                 @enderror
 
                 <label for="codigo_postal_envio" class="form-label">Código Postal</label>
-                <input type="text" class="form-control" id="codigo_postal_envio" name="codigo_postal_envio" required value="{{ old('codigo_postal_envio') }}">
+                <input type="number" class="form-control" id="codigo_postal_envio" name="codigo_postal_envio" required value="{{ old('codigo_postal_envio') }}">
                 @error('codigo_postal_envio')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror

@@ -23,13 +23,13 @@ return new class extends Migration
             // Ubicación de entrega
             $table->string('pais_entrega');
             $table->string('ciudad_entrega');
-            $table->string('codigo_postal_entrega');
+            $table->integer('codigo_postal_entrega');
             $table->text('direccion_entrega');
             
             // Ubicación de envío
             $table->string('pais_envio');
             $table->string('ciudad_envio');
-            $table->string('codigo_postal_envio');
+            $table->integer('codigo_postal_envio');
             $table->text('direccion_envio');
             $table->decimal('precio', 10, 2);
             
