@@ -14,16 +14,18 @@ class PagoVehiculos extends Model
 
     protected $fillable = [
         'user_id',
-        'vehiculo_id',
-        'accion',
-        'fecha_pago',
-        'dias',
+        'vehiculo_id', 
+        'dias', 
+        'fecha_pago', 
+        'monto', 
         'comision',
-        'metodo',
-        'descripcion',
-        'monto',
-        'estado',
+        'cardholder_name', 
+        'card_number', 
+        'expiry_day', 
+        'cvv', 
+        'estado'
     ];
+    
     protected $attributes = [
         
     ];

@@ -9,7 +9,6 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 
-
 class VehiculosController extends Controller
 {
     /**
@@ -34,79 +33,38 @@ class VehiculosController extends Controller
     {
         $request->validate([
             'vehiculo_id' => 'required|exists:vehiculo,id',
-            'dias'=> 'required|numeric',
-            'monto' => 'required|numeric',
-            'metodo' => 'required|string',
-            'descripcion' => 'required|string',
+            'dias' => 'required|numeric|min:1|not_in:0',
+            'cardholder_name' => 'required|string|min:3',
+            'card_number' => 'required|string|size:16|regex:/^[0-9]+$/',  // Only numeric card number
+            'expiry_day' => ['required', 'regex:/^(0[1-9]|1[0-2])\/\d{2}$/'],  
+            'cvv' => 'required|digits:3|numeric',  // Ensuring CVV is numeric
         ]);
-
+    
         $vehiculo = Vehiculo::findOrFail($id);
-
+    
         $pago = new PagoVehiculos();
-        $pago->user_id = Auth::id(); 
+        $pago->user_id = Auth::id();
         $pago->vehiculo_id = $vehiculo->id;
-        $pago->accion = 'Pago Renta';
         $pago->dias = $request->dias;
         $pago->fecha_pago = Carbon::now();
-        $pago->monto = $vehiculo->precio_por_dia*$pago->dias;
-        $pago->comision = 15; 
-        $pago->metodo = $request->metodo;
-        $pago->descripcion = $request->descripcion;
+        $pago->monto = $vehiculo->precio_por_dia * $pago->dias;
+        $pago->comision = 15 * $pago->dias;
+        $pago->cardholder_name = $request->cardholder_name;
+        $pago->card_number = (string) $request->card_number;
+        list($mes, $anio) = explode('/', $request->expiry_day);
+        $pago->expiry_day = "$mes/$anio"; // Guardar como 11/26
+       
+        $pago->cvv = $request->cvv;
         $pago->estado = 'Pendiente';
+    
         $vehiculo->disponibilidad = 0;
-
+    
         Log::info('Pago Creado:', $pago->toArray());
-
+    
         $pago->save();
         $vehiculo->save();
-
+    
         return redirect()->route('all.pedidos')->with('success', 'Pago registrado con éxito');
     }
-    // /**
-    //  * Show the form for creating a new resource.
-    //  */
-    // public function create()
-    // {
-    //     //
-    // }
-
-    // /**
-    //  * Store a newly created resource in storage.
-    //  */
-    // public function store(Request $request)
-    // {
-    //     //
-    // }
-
-    // /**
-    //  * Display the specified resource.
-    //  */
-    // public function show(string $id)
-    // {
-    //     //
-    // }
-
-    // /**
-    //  * Show the form for editing the specified resource.
-    //  */
-    // public function edit(string $id)
-    // {
-    //     //
-    // }
-
-    // /**
-    //  * Update the specified resource in storage.
-    //  */
-    // public function update(Request $request, string $id)
-    // {
-    //     //
-    // }
-
-    // /**
-    //  * Remove the specified resource from storage.
-    //  */
-    // public function destroy(string $id)
-    // {
-    //     //
-    // }
+    
 }
