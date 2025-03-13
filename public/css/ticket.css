@@ -1,6 +1,4 @@
         .ticket-container {
-            width: 100%;
-            max-width: 600px;
             margin: 30px auto;
             padding: 20px;
             border: 2px solid #FFD700; /* Borde amarillo */
@@ -51,3 +49,35 @@
         .ticket-footer .btn:hover {
             background-color: #FFCC00;
         }
+
+        .container-flex {
+            display: flex;
+            gap: 20px; /* Espacio entre ambos divs */
+            justify-content: center; /* Centrar los divs horizontalmente */
+        }
+        
+        .ticket-container {
+            width: 45%; /* Ancho de cada contenedor */
+            border: 1px solid #FFD700;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .container-flex {
+            display: flex;
+            gap: .4px;
+            justify-content: center; /* Centrar horizontalmente */
+            flex-wrap: wrap; /* Permite que se acomoden uno abajo del otro en pantallas pequeñas */
+        }
+        
+        .ticket-container {
+            width: 45%;
+            height: 30%;
+            border: 2px solid #FFD700; /* Borde */
+            border-radius: 10px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+
+

@@ -12,13 +12,13 @@
                 <div class="card card-blog card-plain">
                     <div class="card-header p-0 m-2">
                         <a class="d-block shadow-xl border-radius-xl">
-                            <img src="{{ asset('storage/img/viaje.jpeg') }}" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg" width="400" height="140">
+                            <img src="{{ asset('/storage/img_pedidos/camion.jpg') }}" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg" width="400" height="140">
                         </a>
                     </div>
                     <div class="card-body p-3">
                         <p class="mb-0 text-sm">Viaje 12</p>
                         <div class="d-flex align-items-center justify-content-between">
-                            <a href="{{route('transportistas.pedidos')}}" type="button" class="btn btn-outline-primary btn-sm mb-0">View Travel</a>
+                            <a href="{{route('transportistas.pedidos')}}" type="button" class="btn btn-warning btn-sm mb-0">View Travel</a>
                             <h6>estado: en curso</h6>
                         </div>
                     </div>
@@ -29,13 +29,13 @@
                     <div class="card card-blog card-plain">
                         <div class="card-header p-0 m-2">
                             <a class="d-block shadow-xl border-radius-xl">
-                                <img src="{{ asset('storage/img/viaje.jpeg') }}" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg" width="400" height="140">
+                                <img src="{{ asset('/storage/img_pedidos/camion.jpg') }}"  alt="img-blur-shadow" class="img-fluid shadow border-radius-lg" width="400" height="140">
                             </a>
                         </div>
                         <div class="card-body p-3">
                             <p class="mb-0 text-sm">Viaje #{{ $i }}</p>
                             <div class="d-flex align-items-center justify-content-between">
-                                <a href="{{route('transportistas.pedidos')}}" type="button" class="btn btn-outline-primary btn-sm mb-0">View Travel</a>
+                                <a href="{{route('transportistas.pedidos')}}" type="button" class="btn btn-warning btn-sm mb-0">View Travel</a>
                                 <h6>estado: terminado</h6>
                             </div>
                         </div>

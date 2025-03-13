@@ -1,12 +1,20 @@
 @extends('layouts.guest')
 
 @section('css')
-    <link rel="stylesheet" href="{{asset('css/ticket.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-@endsection
+    <link rel="stylesheet" href="{{asset('css/ticket.css')}}">
+
+    @endsection
 
 @section('content')
-    <div class="ticket-container">
+
+<div class="ticket-footer">
+    <a href="{{ route('all.pedidos')}}" class="btn">
+        <i class="fas fa-arrow-left"></i> Regresar
+    </a>
+</div>
+<div class="container-flex">
+    <div class="ticket-container pedido">
         <div class="ticket-header">
             Detalles del Pedido
         </div>
@@ -59,8 +67,8 @@
             <label>Dirección de Envío:</label>
             <span>{{ $pedido->direccion_envio }}</span>
         </div>
-
-        <!-- Detalles del Pago -->
+    </div>
+    <div class="ticket-container pago">
         <div class="ticket-header">
             Detalles del Pago
         </div>
@@ -102,11 +110,7 @@
             </div>
         @endforeach
 
-        <div class="ticket-footer">
-            <a href="{{ route('all.pedidos')}}" class="btn">
-                <i class="fas fa-arrow-left"></i> Regresar
-            </a>
-        </div>
         
     </div>
+</div>
 @endsection

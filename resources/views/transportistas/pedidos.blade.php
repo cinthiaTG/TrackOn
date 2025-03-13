@@ -25,7 +25,7 @@
                                 <td>
                                     <div class="d-flex px-2 py-1">
                                         <div>
-                                            <img src="{{ asset('/storage/img/pedidos/theOffice.jpg') }}" class="avatar avatar-sm me-3" alt="Pedido" width="50" height="50">
+                                            <img src="{{ asset('/storage/img_pedidos/pedido1.jpg') }}" class="avatar avatar-sm me-3" alt="Pedido" width="50" height="50">
                                         </div>
                                     </div>
                                 </td>
@@ -36,7 +36,7 @@
                                 </td>
                                 <td>
                                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vol.</p>
-                                    <button type="button" class="btn btn-success">Ver ruta</button>
+                                    <button type="button" class="btn btn-warning">Ver ruta</button>
                                 </td>
                                 <td class="align-middle text-center text-sm">
                                     <span class="text-xs font-weight-bold">{{ $i % 2 == 0 ? 'Pagado' : 'Terminado' }}</span>

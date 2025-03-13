@@ -12,11 +12,7 @@
             <div class="back-button">
                 <a href="{{ route('user.rentaV') }}" class="btn btn-secondary">← Volver</a>
             </div>
-            
-            <div class="card-top border-bottom text-center">
-               
-                <div class="header" id="logo">TrackOn</div> <!-- Cambié el span a un div con la clase header -->
-            </div>
+
 
             <div class="card-body">
 

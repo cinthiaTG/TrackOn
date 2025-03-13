@@ -114,7 +114,7 @@
                         <td>
                           <div class="d-flex px-2 py-1">
                             <div>
-                              <img src="{{asset('/storage/img/pedidos/theOffice.jpg')}}" class="avatar avatar-sm me-3" alt="xd" width="50" height="50">
+                              <img src="{{asset('/storage/img_pedidos/pedido1.jpg')}}" class="avatar avatar-sm me-3" alt="xd" width="70" height="70">
                             </div>
                             
                           </div>
@@ -126,7 +126,7 @@
                         </td>
                         <td>
                           <P>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vol.</P>
-                          <button type="button" class="btn btn-success">ver ruta</button>
+                          <button type="button" class="btn btn-warning">ver ruta</button>
 
                         </td>
                         <td class="align-middle text-center text-sm">
@@ -161,7 +161,7 @@
                         <td>
                             <div class="d-flex px-2 py-1">
                               <div>
-                                <img src="{{asset('/storage/img/pedidos/theOffice.jpg')}}" class="avatar avatar-sm me-3" alt="xd" width="50" height="50">
+                                <img src="{{asset('/storage/img_pedidos/pedido1.jpg')}}" class="avatar avatar-sm me-3" alt="xd" width="70" height="70">
                               </div>
                               
                             </div>
@@ -173,7 +173,7 @@
                           </td>
                           <td>
                             <P>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vol.</P>
-                            <button type="button" class="btn btn-success">ver ruta</button>
+                            <button type="button" class="btn btn-warning">ver ruta</button>
 
                           </td>
                         <td class="align-middle text-center text-sm">
@@ -208,7 +208,7 @@
                         <td>
                             <div class="d-flex px-2 py-1">
                               <div>
-                                <img src="{{asset('/storage/img/pedidos/theOffice.jpg')}}" class="avatar avatar-sm me-3" alt="xd" width="50" height="50">
+                                <img src="{{asset('/storage/img_pedidos/pedido1.jpg')}}" class="avatar avatar-sm me-3" alt="xd" width="70" height="70">
                               </div>
                               
                             </div>
@@ -220,7 +220,7 @@
                           </td>
                           <td>
                             <P>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vol.</P>
-                            <button type="button" class="btn btn-success">ver ruta</button>
+                            <button type="button" class="btn btn-warning">ver ruta</button>
 
                           </td>
                         <td class="align-middle text-center text-sm">
@@ -255,7 +255,7 @@
                         <td>
                             <div class="d-flex px-2 py-1">
                               <div>
-                                <img src="{{asset('/storage/img/pedidos/theOffice.jpg')}}" class="avatar avatar-sm me-3" alt="xd" width="50" height="50">
+                                <img src="{{asset('/storage/img_pedidos/pedido1.jpg')}}" class="avatar avatar-sm me-3" alt="xd" width="70" height="70">
                               </div>
                               
                             </div>
@@ -267,7 +267,7 @@
                           </td>
                           <td>
                             <P>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vol.</P>
-                            <button type="button" class="btn btn-success">ver ruta</button>
+                            <button type="button" class="btn btn-warning">ver ruta</button>
 
                           </td>
                         <td class="align-middle text-center text-sm">
@@ -302,7 +302,7 @@
                         <td>
                             <div class="d-flex px-2 py-1">
                               <div>
-                                <img src="{{asset('/storage/img/pedidos/theOffice.jpg')}}" class="avatar avatar-sm me-3" alt="xd" width="50" height="50">
+                                <img src="{{asset('/storage/img_pedidos/pedido1.jpg')}}" class="avatar avatar-sm me-3" alt="xd" width="70" height="70">
                               </div>
                               
                             </div>
@@ -314,7 +314,7 @@
                           </td>
                           <td>
                             <P>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vol.</P>
-                            <button type="button" class="btn btn-success">ver ruta</button>
+                            <button type="button" class="btn btn-warning">ver ruta</button>
 
                           </td>
                         <td class="align-middle text-center text-sm">

@@ -20,7 +20,7 @@ class VehiculoSeeder extends Seeder
             'transmision' => 'Automática',
             'precio_por_dia' => '1200.00',
             'disponibilidad' => true,
-            'img_vehiculo' => '/storage/img/vehiculos/nissanKicks.jpeg',
+            'img_vehiculo' => '/storage/vehiculos/Nissan_Kicks_2020.jpg',
         ]);
 
         DB::table('vehiculo')->insert([
@@ -31,7 +31,7 @@ class VehiculoSeeder extends Seeder
             'transmision' => 'Manual',
             'precio_por_dia' => '1100.00',
             'disponibilidad' => true,
-            'img_vehiculo' => '/storage/img/vehiculos/nissansentra.jpeg',
+            'img_vehiculo' => '/storage/vehiculos/Nissan_Sentra_2019.jpg',
         ]);
 
         DB::table('vehiculo')->insert([
@@ -42,7 +42,7 @@ class VehiculoSeeder extends Seeder
             'transmision' => 'Automática',
             'precio_por_dia' => '1150.00',
             'disponibilidad' => true,
-            'img_vehiculo' => '/storage/img/vehiculos/hondacity.jpeg',
+            'img_vehiculo' => '/storage/vehiculos/Nissan_Sentra_2019.jpg',
         ]);
 
         DB::table('vehiculo')->insert([
@@ -53,7 +53,7 @@ class VehiculoSeeder extends Seeder
             'transmision' => 'Manual',
             'precio_por_dia' => '1050.00',
             'disponibilidad' => true,
-            'img_vehiculo' => '/storage/img/vehiculos/toyotacorolla.jpeg',
+            'img_vehiculo' => '/storage/vehiculos/Nissan_Sentra_2019.jpg',
         ]);
 
         DB::table('vehiculo')->insert([
@@ -64,7 +64,7 @@ class VehiculoSeeder extends Seeder
             'transmision' => 'Automática',
             'precio_por_dia' => '950.00',
             'disponibilidad' => true,
-            'img_vehiculo' => '/storage/img/vehiculos/fordfiesta.jpeg',
+            'img_vehiculo' => '/storage/vehiculos/Nissan_Sentra_2019.jpg',
         ]);
 
         DB::table('vehiculo')->insert([
@@ -75,7 +75,7 @@ class VehiculoSeeder extends Seeder
             'transmision' => 'Manual',
             'precio_por_dia' => '1080.00',
             'disponibilidad' => true,
-            'img_vehiculo' => '/storage/img/vehiculos/chevroletaveo.jpeg',
+            'img_vehiculo' => '/storage/vehiculos/Nissan_Sentra_2019.jpg',
         ]);
 
         DB::table('vehiculo')->insert([
@@ -86,7 +86,7 @@ class VehiculoSeeder extends Seeder
             'transmision' => 'Automática',
             'precio_por_dia' => '1025.00',
             'disponibilidad' => true,
-            'img_vehiculo' => '/storage/img/vehiculos/vwjetta.jpeg',
+            'img_vehiculo' => '/storage/vehiculos/Nissan_Sentra_2019.jpg',
         ]);
 
         DB::table('vehiculo')->insert([
@@ -97,29 +97,7 @@ class VehiculoSeeder extends Seeder
             'transmision' => 'Manual',
             'precio_por_dia' => '1180.00',
             'disponibilidad' => true,
-            'img_vehiculo' => '/storage/img/vehiculos/mazda3.jpeg',
-        ]);
-
-        DB::table('vehiculo')->insert([
-            'marca' => 'Hyundai',
-            'modelo' => 'Elantra',
-            'año' => '2019',
-            'placa' => 'MNO-2468',
-            'transmision' => 'Automática',
-            'precio_por_dia' => '1120.00',
-            'disponibilidad' => true,
-            'img_vehiculo' => '/storage/img/vehiculos/hyundaielantra.jpeg',
-        ]);
-
-        DB::table('vehiculo')->insert([
-            'marca' => 'Kia',
-            'modelo' => 'Rio',
-            'año' => '2021',
-            'placa' => 'PQR-3690',
-            'transmision' => 'Manual',
-            'precio_por_dia' => '1090.00',
-            'disponibilidad' => true,
-            'img_vehiculo' => '/storage/img/vehiculos/kiario.jpeg',
+            'img_vehiculo' => '/storage/vehiculos/Nissan_Sentra_2019.jpg',
         ]);
     }
 }
