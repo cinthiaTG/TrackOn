@@ -69,7 +69,6 @@ Route::middleware(['auth'])->group(function () {
 
         Route::get('/dashboard', [TransportistaController::class, 'index'])->name('transportistas.dashboard');
         Route::get('/viajes', [TransportistaController::class, 'viajes'])->name('transportistas.viajes');
-        Route::get('/nosotros', [TransportistaController::class, 'nosotros'])->name('transportistas.nosotros');
         Route::get('/pedidos', [TransportistaController::class, 'pedidos'])->name('transportistas.pedidos');
 
     });

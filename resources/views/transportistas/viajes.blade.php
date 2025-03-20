@@ -4,7 +4,7 @@
 <div class="container">
     <div class="col-12 mt-4">
         <div class="mb-5 ps-3">
-            <h3 class="mb-1">Viajes - Febrero</h3>
+            <h3 class="mb-1">Tus Viajes</h3>
         </div>
 
         <div class="row">

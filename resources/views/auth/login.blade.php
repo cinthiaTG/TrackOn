@@ -9,7 +9,7 @@
                 <div class="col-lg-4 col-md-6 d-flex flex-column justify-content-center me-5">
                     <h1 class="my-5 display-3 fw-bold ls-tight">
                         Welcome<br />
-                        <span class="text-primary">back!</span>
+                        <span class="text-warning">back!</span>
                       </h1>
                       <p style="color: hsl(217, 10%, 50.8%)">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -70,14 +70,7 @@
                         </div>
 
                         <div class="mb-3 w-100">
-                            <button type="submit" class="btn btn-primary w-100">{{ __('Iniciar Sesión') }}</button>
-                            <div class="d-flex align-items-center justify-content-center">
-                                <span class="mx-2 my-2">Ó</span>
-                            </div>
-                            <button class="btn btn-outline-secondary text-dark w-100 mb-4">
-                                <img src="https://pluspng.com/img-png/google-logo-png-open-2000.png" alt="Google logo" style="width: 20px; margin-right: 8px;">
-                                Iniciar Sesión con Google
-                            </button>
+                            <button type="submit" class="btn btn-warning w-100">{{ __('Iniciar Sesión') }}</button>
                         </div>
                         <p class="text-center">Aun no tienes una cuenta? <a href="{{ route('register') }}" class="text-decoration-none">Regístrate</a></p>
 
