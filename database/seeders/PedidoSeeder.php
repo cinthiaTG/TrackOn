@@ -14,10 +14,10 @@ class PedidoSeeder extends Seeder
     {
         DB::table('pedido')->insert([
             'user_id' => 1,
-            'estado' => 'inactivo',
+            'estado' => 'Pendiente',
             'descripcion_pedido' => 'funkoss',
             'cantidad' => 30,
-            'img_pedido' => '/img/pedidos/theOffice.jpg',
+            'img_pedido' =>'/storage/img_pedidos/theOffice.jpg',
             'categoria' => 'Mudanza',
             'pais_entrega' => 'México',
             'ciudad_entrega' => 'Ciudad Victoria',
@@ -36,7 +36,7 @@ class PedidoSeeder extends Seeder
             'estado' => 'Terminado',
             'descripcion_pedido' => 'Plantas',
             'cantidad' => 160,
-            'img_pedido' => '\img_pedidos\tenis.jpg',
+            'img_pedido' => '/storage/img_pedidos/plantitas.jpg',
             'categoria' => 'Otro',
             'pais_entrega' => 'México',
             'ciudad_entrega' => 'Guadalajara',
@@ -54,7 +54,7 @@ class PedidoSeeder extends Seeder
             'estado' => 'Aceptado',
             'descripcion_pedido' => 'Otras Plantitas',
             'cantidad' => 160,
-            'img_pedido' => '\img_pedidos\tenis.jpg',
+            'img_pedido' => '/storage/img_pedidos/plantitas.jpg',
             'categoria' => 'Otro',
             'pais_entrega' => 'México',
             'ciudad_entrega' => 'Guadalajara',
@@ -70,10 +70,10 @@ class PedidoSeeder extends Seeder
         DB::table('pedido')->insert([
             'user_id' => 2,
             'estado' => 'Pendiente',
-            'descripcion_pedido' => 'Funkos de the office',
+            'descripcion_pedido' => 'Bultos de cemento',
             'cantidad' => 200,
-            'img_pedido' => '\img_pedidos\pedido1.jpg',
-            'categoria' => 'Otro',
+            'img_pedido' => '/storage/img_pedidos/cemento.jpg',
+            'categoria' => 'Contruccion',
             'pais_entrega' => 'México',
             'ciudad_entrega' => 'Guadalajara',
             'codigo_postal_entrega' => 44100,
@@ -82,7 +82,7 @@ class PedidoSeeder extends Seeder
             'ciudad_envio' => 'León',
             'codigo_postal_envio' => 17000,
             'direccion_envio' => 'Colonia Centro, calle 15',
-            'precio' => '600',
+            'precio' => '6000',
             'aceptar_terminos' => true,
         ]);
     }

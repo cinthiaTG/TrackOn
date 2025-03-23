@@ -1,0 +1,82 @@
+:root {
+    --primario:  #264653;  
+    --secundario:  #48C9B0; 
+    --contraste:  #2A9D8F;  
+    --botones:  #E74C3C;  
+    --fondos: #ECF0F1;  
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: var(--fondos);
+    color: #333;
+}
+
+/* Tarjeta de bienvenida */
+.card.bg-light.shadow-sm.p-4.text-center {
+    background-color: #ffffff;
+    border: 2px solid var(--contraste);
+    border-radius: 12px;
+}
+h1 {
+    color: var(--primario) !important;
+}
+
+
+/* Tabla */
+.table {
+    border-radius: 8px;
+}
+
+.table thead {
+    background-color: var(--primario);
+    color: #ffffff;
+}
+
+.table tbody tr {
+    background-color: #ffffff;
+}
+
+.table tbody tr:hover {
+    background-color: var(--secundario);
+}
+
+/* Botones */
+.btn-warning {
+    font-weight: 600;
+    border-radius: 8px;
+    background-color: var(--botones);
+    color: #fff;
+    border: none;
+}
+
+.btn-warning:hover {
+    background-color: #e04e00; /* Color ligeramente más oscuro */
+    color: #fff;
+}
+
+/* Encabezado de la tarjeta */
+.card-header {
+    background-color: var(--contraste);
+    color: #000;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-body {
+    background-color: #fff;
+    padding: 1.5rem;
+}
+
+.footer {
+    background-color: #ffffff;
+    color: #6c757d;
+}
+
+.footer i {
+    color: #FF5714;
+}

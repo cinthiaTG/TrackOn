@@ -18,6 +18,37 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     @yield('css')
+
+    <style>
+        .nav-link.active {
+            position: relative;
+            color:rgb(2, 2, 2);
+            font-weight: bold; 
+        }
+
+        .nav-link.active::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%; 
+            height: 3px; 
+            background-color: #ec685a;
+        }
+    </style>
+    
+    <style>
+
+        /* Navbar */
+    .navbar {
+        padding: 15px 0;
+    }
+
+    .navbar-brand{
+        font-size: 1.7rem;
+        font-weight: 600; 
+    }
+</style>
 </head>
 
 <body>
@@ -27,22 +58,18 @@
             <!-- Logo a la izquierda -->
             <a class="navbar-brand" href="{{route('users.dashboard')}}">TrackOn</a>
 
-            <!-- Botón de menú para pantallas pequeñas -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <!-- Enlaces centrados -->
+            <!-- Enlaces centrados -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{route('users.dashboard')}}">Home</a>
+                    <a class="nav-link {{ Request::routeIs('users.dashboard') ? 'active' : '' }}" href="{{ route('users.dashboard') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{route('all.pedidos')}}">Tus pedidos</a>
+                        <a class="nav-link {{ Request::routeIs('all.pedidos') ? 'active' : '' }}" href="{{ route('all.pedidos') }}">Tus pedidos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{route('user.nosotros')}}">Nosotros</a>
+                        <a class="nav-link {{ Request::routeIs('user.nosotros') ? 'active' : '' }}" href="{{ route('user.nosotros') }}">Nosotros</a>
                     </li>
                 </ul>
             </div>

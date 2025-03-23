@@ -37,10 +37,8 @@ class PedidoController extends Controller
     public function allPedidos()
     {
         $pedido = Pedido::where('user_id', Auth::id())->get();
-        $rentas = PagoVehiculos::where('user_id', Auth::id())->get();
-        $vehiculo = Vehiculo::all();
 
-        return view('users.pedidos', compact('pedido','rentas', 'vehiculo'));
+        return view('users.pedidos', compact('pedido'));
     }
 
     /**
@@ -74,7 +72,7 @@ class PedidoController extends Controller
         
         if ($request->hasFile('img_pedido')) {
             // Guardar la imagen
-            $pedido->img_pedido = $request->file('img_pedido')->store('pedidos/storage/img/pedidos/', 'public');
+            $pedido->img_pedido = $request->file('img_pedido')->store('pedidos/', 'public');
         } else {
             $pedido->img_pedido = '/storage/img/paqueteria.jpeg';
         }
@@ -153,7 +151,7 @@ class PedidoController extends Controller
             Storage::delete($pedido->img_pedido);
         }
         // Almacenar la nueva imagen
-        $pedido->img_pedido = $request->file('img')->store('pedidos/images', 'public');
+        $pedido->img_pedido = $request->file('img')->store('pedidos/', 'public');
     }
 
     $pedido->categoria = $request->categoria;

@@ -14,7 +14,7 @@ use App\Http\Controllers\PagosController;
 // Ruta principal
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');  
 
 // Rutas de autenticación
 Auth::routes();
@@ -49,7 +49,6 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/dashboard', [UserController::class, 'index'])->name('users.dashboard');    
         Route::get('/crear_pedido', [PedidoController::class, 'create'])->name('user.Cviaje');
         Route::post('/crear_pedido', [PedidoController::class, 'store']); 
-               Route::get('/rentaVehiculos', [VehiculosController::class, 'index'])->name('user.rentaV');
         Route::get('/misPedidos', [PedidoController::class, 'allPedidos'])->name('all.pedidos');
         Route::get('/pedido/{id}/edit', [PedidoController::class, 'edit'])->name('pedidos.edit');
         Route::put('/pedidos/{pedido}', [PedidoController::class, 'update'])->name('pedidos.update');
@@ -58,9 +57,6 @@ Route::middleware(['auth'])->group(function () {
 
         Route::get('/pago/pedido/{id}', [PagosController::class, 'facturaPedido'])->name('pago.pedido');
         Route::post('/pago/pedido/{id}', [PagosController::class, 'store'])->name('pago.pedido');
-
-        Route::get('/pago/renta/{id}', [VehiculosController::class, 'facturaRenta'])->name('pago.renta');
-        Route::post('/pago/renta/{id}', [VehiculosController::class, 'rentaStore'])->name('pago.renta');
 
         Route::get('/nosotros', [UserController::class, 'nosotros'])->name('user.nosotros');
 

@@ -1,59 +1,98 @@
-/* Contenedor principal */
-.container {
-    margin-top: 40px; /* Espacio superior */
+/* Definición de colores base */
+:root {
+    --primario:  #264653;  
+    --secundario:  #48C9B0; 
+    --contraste:  #2A9D8F;  
+    --botones:  #E74C3C;  
+    --fondos: #ECF0F1;  
 }
 
-/* Estilo general de las tarjetas */
+/* Estilos generales */
+body {
+    background-color: var(--fondos);
+    color: var(--primario);
+    font-family: 'Rubik', sans-serif;
+}
+
+/* Título principal */
+h1.display-3 {
+    color: var(--primario);
+    font-weight: bold;
+}
+
+/* Títulos secundarios */
+h5.card-title {
+    color: var(--primario);
+    font-weight: bold;
+}
+
+/* Párrafos */
+p.lead {
+    color: var(--primario);
+}
+
+/* Botones */
+.btn {
+    border-radius: 30px; /* Bordes redondeados */
+}
+
+.btn-warning {
+    background-color: var(--secundario);
+    color: white;
+    border: none;
+}
+
+.btn-warning:hover {
+    background-color: var(--contraste);
+}
+
+/* Estilos de las tarjetas */
 .card {
-    border-radius: 16px; /* Bordes redondeados */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    overflow: hidden; /* Evita desbordamientos */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave */
+    background-color: white;
+    border-radius: 12px;  /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Hover en tarjetas */
-.card:hover {
-    transform: translateY(-8px); /* Eleva la tarjeta al pasar el mouse */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Aumenta la sombra */
-}
-
-/* Imágenes en las tarjetas */
 .card-img-top {
-    max-height: 250px; /* Altura máxima de la imagen */
-    object-fit: cover; /* Ajusta la imagen manteniendo las proporciones */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 300px; /* Ajusta la altura de la imagen */
 }
 
-/* Título de la tarjeta */
-.card-title {
-    font-size: 1.5rem; /* Tamaño más grande */
-    font-weight: bold; /* Negrita */
-    color: #2c3e50; /* Azul oscuro */
+/* Footer */
+footer {
+    background-color: var(--primario);
+    color: white;
+    padding: 10px 0;
 }
 
-/* Texto de la tarjeta */
-.card-text {
-    font-size: 1rem; /* Tamaño estándar */
-    color: #555; /* Gris oscuro */
-    line-height: 1.6; /* Mejora la legibilidad */
+footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-/* Botón en la tarjeta */
-.btn-primary {
-    background-color: #4a90e2; /* Azul moderno */
-    border: none; /* Sin borde */
-    border-radius: 8px; /* Bordes redondeados */
-    padding: 10px 20px; /* Espaciado */
-    transition: background 0.3s ease; /* Animación de color */
+footer a:hover {
+    color: var(--secundario);
 }
 
-/* Efecto hover en el botón */
-.btn-primary:hover {
-    background-color: #357ABD; /* Azul más oscuro */
+/* Estilo de la card de información */
+.card-body p {
+    color: var(--primario);
 }
 
-/* Responsive: En pantallas pequeñas, ajusta las tarjetas */
+/* Padding general */
+.container {
+    padding: 30px 15px;
+}
+
+/* Responsive para pantallas pequeñas */
 @media (max-width: 768px) {
+    .display-3 {
+        font-size: 2rem;
+    }
+
     .card {
-        margin-bottom: 20px; /* Espacio entre tarjetas */
+        margin-bottom: 20px;
     }
 }

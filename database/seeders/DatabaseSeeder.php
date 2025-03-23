@@ -38,7 +38,6 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             PedidoSeeder::class,
-            VehiculoSeeder::class,
             PagosPedidosSeeder::class,
             //UserSeeder::class,
             //UserSeeder::class,

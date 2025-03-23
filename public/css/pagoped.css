@@ -1,0 +1,100 @@
+/* Variables de color */
+:root {
+    --primario: #264653;
+    --secundario: #48C9B0;
+    --contraste: #2A9D8F;
+    --botones: #E74C3C;
+    --fondos: #F4F4F9;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Título de la página */
+.page-title {
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--primario);
+    margin-bottom: 30px;
+}
+
+/* Formulario */
+.payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Grupo de formulario */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Etiquetas */
+.form-label {
+    font-size: 16px;
+    color: var(--primario);
+}
+
+/* Campos de entrada y select */
+.form-control, .form-select, textarea {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    color: #333;
+    width: 100%;
+}
+
+/* Campo de texto (textarea) */
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Botón de submit */
+.btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: var(--primario);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--secundario);
+}
+
+/* Estilo de botones cuando están deshabilitados */
+button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+/* Responsive para dispositivos pequeños */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .page-title {
+        font-size: 22px;
+    }
+
+    .btn {
+        font-size: 14px;
+    }
+}

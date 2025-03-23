@@ -35,7 +35,9 @@ class TransportistaController extends Controller
         return(view('transportistas.viajes'));
     }
     public function pedidos(){
-        return (view('transportistas.pedidos'));
+        $pedidos = Pedido::all();
+
+        return (view('transportistas.pedidos', compact ('pedidos')));
     }
     public function nosotros()
     {

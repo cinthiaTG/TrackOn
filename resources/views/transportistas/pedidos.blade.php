@@ -13,40 +13,31 @@
                     <table class="table align-items-center mb-0">
                         <thead>
                             <tr>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Pedido</th>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Ruta</th>
-                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Estado pedido</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Desccripcion</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">cantidad</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Categoria</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Imagen</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @for ($i = 1; $i <= 5; $i++)
+                            @foreach($pedidos->where('estado', 'Pendiente') as $pedidos)
                             <tr>
+                               
+                                <td>{{ $pedidos->descripcion_pedido }}</td>
+                                <td>{{ $pedidos->cantidad }}</td>
+                                <td>{{ $pedidos->categoria }}</td>
                                 <td>
-                                    <div class="d-flex px-2 py-1">
-                                        <div>
-                                            <img src="{{ asset('/storage/img_pedidos/pedido1.jpg') }}" class="avatar avatar-sm me-3" alt="Pedido" width="50" height="50">
-                                        </div>
-                                    </div>
+                                    @if($pedidos->img_pedido)
+                                        <img src="{{ asset($pedidos->img_pedido) }}" alt="Imagen del pedido" width="100" height="100">
+                                    @else
+                                        Sin imagen
+                                    @endif
                                 </td>
-                                <td>
-                                    <div class="d-flex flex-column justify-content-center">
-                                        <h6 class="mb-0 text-sm">pedido{{ $i }}ID</h6>
-                                    </div>
-                                </td>
-                                <td>
-                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vol.</p>
-                                    <button type="button" class="btn btn-warning">Ver ruta</button>
-                                </td>
-                                <td class="align-middle text-center text-sm">
-                                    <span class="text-xs font-weight-bold">{{ $i % 2 == 0 ? 'Pagado' : 'Terminado' }}</span>
-                                </td>
-                                <td class="align-middle">
 
-                                </td>
                             </tr>
-                            @endfor
-                        </tbody>
+                        @endforeach
+                        
+                    </tbody>
                     </table>
                 </div>
             </div>

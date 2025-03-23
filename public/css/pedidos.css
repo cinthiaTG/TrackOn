@@ -1,0 +1,128 @@
+/* Variables de color */
+:root {
+    --primario: #264653;
+    --secundario: #48C9B0;
+    --contraste: #2A9D8F;
+    --botones: #E74C3C;
+    --fondos: #ECF0F1;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 95%;
+    margin: auto;
+    padding: 20px;
+    background-color: var(--fondos);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+/* Estilos generales */
+body {
+    font-family: 'Rubik', sans-serif;
+    color: #333;
+}
+/* Título */
+h2 {
+    font-weight: bold;
+    color: var(--primario);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilos de la tabla */
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+}
+
+/* Encabezados de la tabla */
+.table th {
+    background-color: var(--primario);
+    color: white;
+    text-align: center;
+    padding: 12px;
+    font-size: 14px;
+}
+
+/* Celdas de la tabla */
+.table td {
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    color: var(--primario);
+}
+
+/* Bordes de la tabla */
+.table thead tr {
+    border-bottom: 3px solid var(--contraste);
+}
+
+.table tbody tr {
+    border-bottom: 1px solid var(--fondos);
+}
+
+.table tbody tr:hover {
+    background-color: var(--fondos);
+}
+
+/* Imagen del pedido */
+.table img {
+    border-radius: 10px;
+    object-fit: cover;
+    border: 2px solid var(--secundario);
+}
+
+/* Estilos de los badges */
+.badge {
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 10px;
+}
+
+/* Colores personalizados para estados */
+.badge-warning { background-color: var(--contraste); color: white; }
+.badge-success { background-color: var(--secundario); color: white; }
+.badge-primary { background-color: var(--primario); color: white; }
+.badge-secondary { background-color: #6c757d; color: white; }
+
+/* Estilos de los botones */
+.btn {
+    font-size: 12px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* Botones personalizados */
+.btn-outline-warning { border-color: var(--contraste); color: var(--contraste); }
+.btn-outline-danger { border-color: var(--botones); color: var(--botones); }
+.btn-outline-secondary { border-color: var(--primario); color: var(--primario); }
+.btn-outline-primary { border-color: var(--secundario); color: var(--secundario); }
+
+/* Responsive: Hacer la tabla desplazable */
+@media (max-width: 992px) {
+    .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .table td {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .btn {
+        font-size: 10px;
+        padding: 6px 10px;
+    }
+}

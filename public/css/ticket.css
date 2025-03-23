@@ -1,83 +1,119 @@
-        .ticket-container {
-            margin: 30px auto;
-            padding: 20px;
-            border: 2px solid #FFD700; /* Borde amarillo */
-            border-radius: 10px;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+/* Variables de color */
+:root {
+    --primario: #264653;
+    --secundario: #48C9B0;
+    --contraste: #2A9D8F;
+    --botones: #E74C3C;
+    --fondos: #ECF0F1;
+}
 
-        .ticket-header {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #333;
-            text-align: center;
-            margin-bottom: 20px;
-        }
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
 
-        .ticket-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-        }
+/* Contenedor principal */
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: var(--fondos);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-        .ticket-item label {
-            font-weight: bold;
-            color: #333;
-        }
+/* Encabezado */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
 
-        .ticket-item span {
-            color: #555;
-        }
+.header h2 {
+    color: var(--primario);
+}
 
-        .ticket-footer {
-            margin-top: 20px;
-            font-size: 0.9em;
-            text-align: center;
-            color: #555;
-        }
+.btn-back {
+    text-decoration: none;
+    background: var(--botones);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
 
-        .ticket-footer .btn {
-            background-color: #FFD700;
-            color: #333;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+.btn-back:hover {
+    background: #c0392b;
+}
 
-        .ticket-footer .btn:hover {
-            background-color: #FFCC00;
-        }
+/* Contenido */
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
 
-        .container-flex {
-            display: flex;
-            gap: 20px; /* Espacio entre ambos divs */
-            justify-content: center; /* Centrar los divs horizontalmente */
-        }
-        
-        .ticket-container {
-            width: 45%; /* Ancho de cada contenedor */
-            border: 1px solid #FFD700;
-            padding: 10px;
-            border-radius: 10px;
-        }
-        .container-flex {
-            display: flex;
-            gap: .4px;
-            justify-content: center; /* Centrar horizontalmente */
-            flex-wrap: wrap; /* Permite que se acomoden uno abajo del otro en pantallas pequeñas */
-        }
-        
-        .ticket-container {
-            width: 45%;
-            height: 30%;
-            border: 2px solid #FFD700; /* Borde */
-            border-radius: 10px;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        
+/* Tarjetas */
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid var(--primario);
+}
 
+.card h3 {
+    color: var(--primario);
+    margin-bottom: 10px;
+}
 
+.card ul {
+    list-style: none;
+}
+
+.card ul li {
+    padding: 5px 0;
+    border-bottom: 1px solid var(--fondos);
+}
+
+.card ul li strong {
+    color: var(--contraste);
+}
+
+/* Imagen */
+.img-container {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.img-container img {
+    max-width: 50%;
+    height: 15rem;
+    width: 15rem;
+    border-radius: 8px;
+    border: 2px solid var(--secundario);
+    transition: transform 0.3s ease-in-out;
+}
+
+.img-container img:hover {
+    transform: scale(1.05);
+}
+
+/* Mensaje de imagen no disponible */
+.no-image {
+    text-align: center;
+    color: var(--botones);
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+}
