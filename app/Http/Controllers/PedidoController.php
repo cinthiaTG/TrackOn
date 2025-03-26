@@ -36,9 +36,9 @@ class PedidoController extends Controller
      */
     public function allPedidos()
     {
-        $pedido = Pedido::where('user_id', Auth::id())->get();
+        $pedidos = Pedido::where('user_id', Auth::id())->get();
 
-        return view('users.pedidos', compact('pedido'));
+        return view('users.pedidos', compact('pedidos'));
     }
 
     /**

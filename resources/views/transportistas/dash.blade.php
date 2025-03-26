@@ -54,7 +54,7 @@
     <!-- Sección del pie de página -->
     <footer class="footer py-3 bg-light text-center mt-4">
         <div class="container">
-            <span class="text-muted">© {{ date('Y') }}, Hecho con <i class="fa fa-heart text-danger"></i> para una mejor web.</span>
+            <span class="text-muted">© {{ date('Y') }}</span>
         </div>
     </footer>
 </div>

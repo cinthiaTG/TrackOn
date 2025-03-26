@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('viajes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('transportista_id')->constrained('transportistas')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->string('fecha_inicio', 255);
             $table->string('fecha_fin', 255);
             $table->integer('cantidad_pedidos');
-            $table->decimal('distancia', 8, 2); // Distancia en kilómetros
+            $table->decimal('distancia', 8, 2);
             $table->timestamps();
         });
     }

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Viaje extends Model
 {
     protected $fillable = [
-        'transportista_id',
+        'user_id',
         'fecha_inicio', 
         'fecha_fin',
         'cantidad_pedidos',

@@ -126,3 +126,91 @@ h2 {
         padding: 6px 10px;
     }
 }
+
+/* Estilos generales del modal */
+.modal-content {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Cabecera del modal */
+.modal-header {
+    background-color: var(--primario);
+    color: #ffffff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 15px;
+}
+
+.modal-title {
+    font-weight: bold;
+}
+
+/* Botón de cierre */
+.btn-close {
+    filter: invert(1);
+}
+
+/* Cuerpo del modal */
+.modal-body {
+    padding: 20px;
+}
+
+/* Tarjetas de información */
+.card {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    color: var(--primario);
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--contraste);
+    padding-bottom: 5px;
+}
+
+/* Lista de detalles */
+.card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card ul li {
+    padding: 5px 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Imagen del pedido */
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.img-container img {
+    border-radius: 8px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 2px solid var(--secundario);
+}
+
+/* Responsivo */
+@media (max-width: 576px) {
+    .modal-dialog {
+        max-width: 90%;
+    }
+
+    .img-container img {
+        width: 80px;
+        height: 80px;
+    }
+}

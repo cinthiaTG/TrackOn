@@ -66,9 +66,9 @@
                 <li class="nav-item">
                     <a class="nav-link {{ Request::routeIs('transportistas.dashboard') ? 'active' : '' }}" href="{{ route('transportistas.dashboard') }}">Dash</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link {{ Request::routeIs('transportistas.viajes') ? 'active' : '' }}" href="{{ route('transportistas.viajes') }}">Tus Viajes</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a class="nav-link {{ Request::routeIs('transportistas.pedidos') ? 'active' : '' }}" href="{{ route('transportistas.pedidos') }}">Pedidos Disponibles</a>
                 </li>
@@ -98,6 +98,8 @@
                                      document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
+                        <a class="nav-link {{ Request::routeIs('transportistas.viajes') ? 'active' : '' }}" href="{{ route('transportistas.viajes') }}">Tus Viajes</a>
+
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf

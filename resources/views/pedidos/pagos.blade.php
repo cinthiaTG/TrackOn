@@ -20,17 +20,6 @@
             <input type="number" class="form-control" id="monto" name="monto" value="{{ $pedido->precio }}" readonly>
         </div>
 
-        <!-- Método de Pago -->
-        <div class="form-group">
-            <label for="metodo" class="form-label">Método de pago</label>
-            <select id="metodo" name="metodo" class="form-select" required>
-                <option value="" disabled selected>Elige...</option>
-                <option value="Tarjeta de crédito" {{ old('metodo') == 'Tarjeta de crédito' ? 'selected' : '' }}>Tarjeta de crédito</option>
-                <option value="Paypal" {{ old('metodo') == 'Paypal' ? 'selected' : '' }}>Paypal</option>
-                <option value="Transferencia" {{ old('metodo') == 'Transferencia' ? 'selected' : '' }}>Transferencia</option>
-            </select>
-        </div>
-
         <!-- Descripción -->
         <div class="form-group">
             <label for="descripcion" class="form-label">Descripción</label>
@@ -43,4 +32,90 @@
         </div>
     </form>
 </div>
+
+<div class="container bg-light d-md-flex align-items-center">
+    <div class="card box1 shadow-sm p-md-5 p-4">
+        <div class="fw-bolder mb-4">
+            <span class="fas fa-dollar-sign"></span>
+            <span class="fas fa-dollar-sign" id="monto">$ {{ $pedido->precio }}</span>
+            </div>
+        <div class="d-flex flex-column">
+            <div class="d-flex align-items-center justify-content-between text">
+                <span>Commission</span>
+                <span class="fas fa-dollar-sign">
+                    <span class="ps-1">$15</span>
+                </span>
+            </div>
+            <div class="d-flex align-items-center justify-content-between text mb-4">
+                <span>Total</span>
+                <span class="fas fa-dollar-sign">
+                    <span class="ps-1">600.99</span>
+                </span>
+            </div>
+     
+        </div>
+    </div>
+    <div class="card box2 shadow-sm">
+        <div class="d-flex align-items-center justify-content-between p-md-5 p-4">
+            <span class="h5 fw-bold m-0">Payment method</span>
+            <div class="btn btn-primary bar">
+                <span class="fas fa-bars"></span>
+            </div>
+        </div>
+        <ul class="nav nav-tabs mb-3 px-md-4 px-2">
+            <li class="nav-item">
+                <a class="nav-link px-2 active" aria-current="page" href="#">Credit Card</a>
+            </li>
+        </ul>
+
+        <form action="">
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex flex-column px-md-5 px-4 mb-4">
+                        <span>Credit Card</span>
+                        <div class="inputWithIcon">
+                            <input class="form-control" type="text" value="5136 1845 5468 3894">
+                            <span>
+                                <img src="https://www.freepnglogos.com/uploads/mastercard-png/mastercard-logo-logok-15.png" alt="">
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex flex-column ps-md-5 px-md-0 px-4 mb-4">
+                        <span>Expiration Date</span>
+                        <div class="inputWithIcon">
+                            <input type="text" class="form-control" value="05/20">
+                            <span class="fas fa-calendar-alt"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex flex-column pe-md-5 px-md-0 px-4 mb-4">
+                        <span>Code CVV</span>
+                        <div class="inputWithIcon">
+                            <input type="password" class="form-control" value="123">
+                            <span class="fas fa-lock"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="d-flex flex-column px-md-5 px-4 mb-4">
+                        <span>Name</span>
+                        <div class="inputWithIcon">
+                            <input class="form-control text-uppercase" type="text" value="Vladimir Berezovkiy">
+                            <span class="far fa-user"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 px-md-5 px-4 mt-3">
+                    <div class="btn btn-primary w-100">Pay $599.00</div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+@endsection
+@section('js')
+
 @endsection

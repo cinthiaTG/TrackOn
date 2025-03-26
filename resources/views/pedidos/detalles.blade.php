@@ -39,21 +39,44 @@
                 <li><strong>Dirección:</strong> {{ $pedido->direccion_envio }}</li>
             </ul>
         </div>
+    </div>
+</div>
 
-        <div class="card pago">
-            <h3>Detalles del Pago</h3>
-            @foreach ($pagos as $pago)
-                <ul>
-                    <li><strong>Acción:</strong> {{ $pago->accion }}</li>
-                    <li><strong>Fecha de Pago:</strong> {{ \Carbon\Carbon::parse($pago->fecha_pago)->format('Y-m-d') }}</li>
-                    <li><strong>Monto:</strong> ${{ number_format($pago->monto, 2) }} MXN</li>
-                    <li><strong>Comisión:</strong> ${{ number_format($pago->comision, 2) }} MXN</li>
-                    <li><strong>Método:</strong> {{ $pago->metodo }}</li>
-                    <li><strong>Descripción:</strong> {{ $pago->descripcion }}</li>
-                    <li><strong>Estado:</strong> {{ $pago->estado }}</li>
-                </ul>
-            @endforeach
+<!-- Modal -->
+<div class="modal fade" id="detallePedidoModal" tabindex="-1" aria-labelledby="detallePedidoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="detallePedidoLabel">Detalles del Pedido</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="card pedido">
+                    <h3>Información del Pedido</h3>
+                    <ul>
+                        <li><strong>Descripción:</strong> <span id="modal-descripcion"></span></li>
+                        <li><strong>Cantidad:</strong> <span id="modal-cantidad"></span></li>
+                        <li><strong>Categoría:</strong> <span id="modal-categoria"></span></li>
+                        <li><strong>Precio:</strong> $<span id="modal-precio"></span> MXN</li>
+                    </ul>
+                    <div class="img-container">
+                        <img id="modal-img" src="" alt="Imagen del pedido">
+                    </div>
+                </div>
+
+                <div class="card ubicacion">
+                    <h3>Ubicación</h3>
+                    <ul>
+                        <li><strong>Entrega:</strong> <span id="modal-pais-entrega"></span>, <span id="modal-ciudad-entrega"></span>, C.P. <span id="modal-codigo-postal-entrega"></span></li>
+                        <li><strong>Dirección:</strong> <span id="modal-direccion-entrega"></span></li>
+                        <li><strong>Envío:</strong> <span id="modal-pais-envio"></span>, <span id="modal-ciudad-envio"></span>, C.P. <span id="modal-codigo-postal-envio"></span></li>
+                        <li><strong>Dirección:</strong> <span id="modal-direccion-envio"></span></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
+
 @endsection

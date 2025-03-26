@@ -12,24 +12,6 @@ class PedidoSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('pedido')->insert([
-            'user_id' => 1,
-            'estado' => 'Pendiente',
-            'descripcion_pedido' => 'funkoss',
-            'cantidad' => 30,
-            'img_pedido' =>'/storage/img_pedidos/theOffice.jpg',
-            'categoria' => 'Mudanza',
-            'pais_entrega' => 'México',
-            'ciudad_entrega' => 'Ciudad Victoria',
-            'codigo_postal_entrega' => 87001,
-            'direccion_entrega' => 'Colonia Centro, calle 5',
-            'pais_envio' => 'México',
-            'ciudad_envio' => 'Monterrey',
-            'codigo_postal_envio' => 64000,
-            'direccion_envio' => 'Colonia Obispado, calle 10',
-            'precio' => '123',
-            'aceptar_terminos' => true,
-        ]);
         
         DB::table('pedido')->insert([
             'user_id' => 2,
@@ -83,6 +65,24 @@ class PedidoSeeder extends Seeder
             'codigo_postal_envio' => 17000,
             'direccion_envio' => 'Colonia Centro, calle 15',
             'precio' => '6000',
+            'aceptar_terminos' => true,
+        ]);
+        DB::table('pedido')->insert([
+            'user_id' => 2,
+            'estado' => 'Pendiente',
+            'descripcion_pedido' => 'Plantas',
+            'cantidad' => 160,
+            'img_pedido' => '/storage/img_pedidos/plantitas.jpg',
+            'categoria' => 'Otro',
+            'pais_entrega' => 'México',
+            'ciudad_entrega' => 'Guadalajara',
+            'codigo_postal_entrega' => 44100,
+            'direccion_entrega' => 'Colonia Americana, calle 20',
+            'pais_envio' => 'México',
+            'ciudad_envio' => 'León',
+            'codigo_postal_envio' => 37000,
+            'direccion_envio' => 'Colonia Centro, calle 15',
+            'precio' => '200',
             'aceptar_terminos' => true,
         ]);
     }

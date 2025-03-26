@@ -19,7 +19,7 @@ return new class extends Migration
             $table->date('fecha_pago'); // Fecha del pago
             $table->decimal('monto', 10, 2); // Monto del pago
             $table->decimal('comision', 10, 2)->nullable(); // Comisión del pago (opcional)
-            $table->string('metodo'); // Método de pago (Tarjeta, PayPal, etc.)
+            $table->string('metodo'); // metdos por ahora solo credit card
             $table->text('descripcion')->nullable(); // Descripción adicional del pago
             $table->enum('estado', ['Pendiente', 'Completado', 'Fallido'])->default('Pendiente'); // Estado del pago
             

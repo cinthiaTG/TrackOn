@@ -38,7 +38,7 @@ class PagosController extends Controller
         $pago->fecha_pago = Carbon::now();
         $pago->monto = $pedido->precio;
         $pago->comision = 15; 
-        $pago->metodo = $request->metodo;
+        $pago->metodo = 'Credit Card';
         $pago->descripcion = $request->descripcion;
         $pago->estado = 'Pendiente';
         $pedido->estado = 'Pago en curso';
